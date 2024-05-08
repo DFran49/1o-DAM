@@ -1,0 +1,2 @@
+12345678M;Pepe López;Explotación de Sistemas Informáticos;1
+12345678M;Pepe López;Explotación de Sistemas Informáticos;2

@@ -1,0 +1,9 @@
+La temperatura del día 1 es: 7
+La temperatura del día 2 es: 5
+La temperatura del día 3 es: 7
+La temperatura del día 4 es: 7
+La temperatura del día 5 es: 27
+La temperatura del día 6 es: 7
+La temperatura del día 7 es: 7
+La máxima es: 27
+La mínima es: 5

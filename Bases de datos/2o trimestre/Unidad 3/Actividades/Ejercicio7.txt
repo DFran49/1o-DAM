@@ -1,0 +1,46 @@
+-- a. Conectar como usuario “root” al servidor de BD MariaDB:
+mysql -u root -p
+
+-- Crear una BD “hotel” y dentro de esta una tabla “reserva” con varios campos: id_reserva,
+-- fecha, descripción,...
+CREATE DATABASE hotel;
+CREATE TABLE reserva (
+  id_reserva INT AUTO_INCREMENT PRIMARY KEY,
+  fecha DATE,
+  descripcion VARCHAR(250)
+);
+
+-- Crear un usuario con nombre “pepe” y contraseña “pepe1234” y BD por defecto “hotel”. No
+-- asignar ningún permiso.
+CREATE USER pepe IDENTIFIED BY "pepe1234";
+GRANT SELECT ON hotel.* TO pepe;
+
+-- b. Conectar con el usuario “pepe” ¿qué puede hacer? ¿por qué? ¿se le ha asignado algún rol a
+-- “pepe”?
+mysql -u pepe -p
+pepe1234
+-- El usuario pepe tendria acceso de SELECT, se le ha asignado el rol de SELECT.
+
+-- c. Definir un rol “usuarios_hotel”. Otorgarle la posibilidad de manipular los datos de las tablas de
+-- la BD “hotel”.
+CREATE ROLE usuarios_hotel;
+GRANT INSERT, UPDATE, DELETE ON hotel.* TO usuarios_hotel;
+
+-- d. Crear el usuario “juan” y asignarle el rol “usuarios_hotel”.
+CREATE USER juan IDENTIFIED BY "juan";
+GRANT usuarios_hotel TO juan;
+
+-- e. Modificar el rol “usuarios_hotel” dejándole únicamente la posibilidad de consultar las
+-- reservas. Conectar como “juan” y tratar de insertar un nuevo registro. ¿Se puede? Hacerlo con
+-- la cuenta de “root”, ¿se puede?
+REVOKE ALL ON hotel.* FROM usuarios_hotel;
+GRANT SELECT ON hotel.reserva TO usuarios_hotel;
+-- Juan no podrá insertar un nuevo registro debido a que el permiso de INSERT fue eliminado del
+-- rol "usuarios_hotel".
+-- Con root puedes insertar un registro ya que tiene todos los permisos necesarios sobre todas las
+-- bases de datos y tablas.
+
+-- f. Borrar el rol “usuarios_hotel”. ¿Se puede? ¿qué sucede con los usuarios que tienen asignado
+-- el rol?
+DROP ROLE usuarios_hotel;
+-- Se puede, todos los usuarios que tienen el rol asignado pierden los roles que les proporcionan.

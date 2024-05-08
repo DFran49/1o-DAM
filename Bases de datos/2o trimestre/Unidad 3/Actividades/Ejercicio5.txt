@@ -1,0 +1,70 @@
+-- Creación de la BD
+CREATE DATABASE centro;
+
+-- Nos metemos en la BD
+USE centro
+
+-- Creación de las tabla profesor
+CREATE TABLE profesor (
+  nif CHAR(8) PRIMARY KEY,
+  nombre VARCHAR(50),
+  apellidos VARCHAR(100),
+  telefono CHAR(15),
+  sueldo Decimal(7,2) CHECK(sueldo BETWEEN 1500.00 AND 2000.00),
+  especialidad VARCHAR(30),
+  fecha_alta DATE
+);
+
+-- Creación de las tabla modulo
+CREATE TABLE modulo (
+  codigo VARCHAR(10) PRIMARY KEY,
+  nombre VARCHAR(50),
+  descripcion VARCHAR(100),
+  horas VARCHAR(300),
+  nif_profesor CHAR(8),
+  FOREIGN KEY (nif_profesor) REFERENCES profesor(nif)
+);
+
+-- Creación de las tabla alumno
+CREATE TABLE alumno (
+  num_expediente INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  nif VARCHAR(8),
+  nombre VARCHAR(50),
+  apellidos VARCHAR(100),
+  domicilio VARCHAR(100),
+  poblacion VARCHAR(50),
+  cod_postal CHAR(5),
+  provincia VARCHAR(50),
+  telefono CHAR(15),
+  sexo VARCHAR(10),
+  fec_nacimiento DATE
+);
+
+-- Creación de las tabla matricula
+CREATE TABLE matricula (
+  expediente_alumno INT UNSIGNED AUTO_INCREMENT,
+  cod_modulo VARCHAR(10),
+  FOREIGN KEY (expediente_alumno) REFERENCES alumno(num_expediente),
+  FOREIGN KEY (cod_modulo) REFERENCES modulo(codigo),
+  curso_escolar VARCHAR(8),
+  PRIMARY KEY (curso_escolar, expediente_alumno, cod_modulo),
+nota DECIMAL(2,2)
+);
+
+ALTER TABLE modulo DROP descripcion;
+
+ALTER TABLE profesor ADD COLUMN cargo VARCHAR(30);
+
+ALTER TABLE matricula MODIFY nota DECIMAL(2,0) CHECK(nota BETWEEN 0 AND 10);
+
+ALTER TABLE profesor MODIFY sueldo DECIMAL(2,2);
+
+CREATE INDEX nombre ON alumno(nombre);
+
+ALTER TABLE modulo RENAME asignatura;
+
+ALTER TABLE profesor CHANGE sueldo salario DECIMAL;
+
+--No se puede
+
+ALTER TABLE alumno CHANGE sexo sexo ENUM('H','M');

@@ -1,0 +1,65 @@
+-- Ejercicio 1
+
+-- Creacion de la BD
+CREATE DATABASE colores;
+
+-- Selección de la BD
+USE colores;
+
+-- Crear tabla color
+CREATE TABLE color (
+  id_color INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  nombre VARCHAR(30) NOT NULL,
+  cod_hexa CHAR(7) NULL
+);
+
+CREATE TABLE fechas (
+  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  nombre VARCHAR(30) NOT NULL,
+  edad TINYINT UNSIGNED CHECK (edad>=0 AND edad <=20) -- (edad BETWEEN 0 AND 20)
+  fecha_nacimiento DATE,
+  fecha_defuncion DATE CHECK (fecha_defuncion>=fecha_nacimiento)
+);
+
+CREATE TABLE proveedor1 (
+  id_proveedor INT UNSIGNED AUTO_INCREMENT,
+  nombre VARCHAR(50),
+  PRIMARY KEY (id_proveedor)
+);
+
+CREATE TABLE lineas_pedido1 (
+  id_pedido INT UNSIGNED,
+  id_linea SMALLINT UNSIGNED,
+  articulo VARCHAR(50) NOT NULL,
+  cantidad INT UNSIGNED NOT NULL,
+  precio DECIMAL(9,2),
+  PRIMARY KEY (id_pedido, id_linea)
+);
+
+
+AUTOR(#id, nombre)
+LIBRO(#isbn, titulo, id_autor[fk: AUTOR]
+
+CREATE TABLE autor (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE libro (
+  isbn CHAR(10) PRIMARY KEY,
+  titulo VARCHAR(100) NOT NULL,
+  id_autor INT UNSIGNED,
+  FOREIGN KEY (id_autor) REFERENCES autor(id)
+);
+
+
+CREATE TABLE Asistente (
+  id_asistente INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  nombre VARCHAR(50) NOT NULL,
+  apellido1 VARCHAR(20) NOT NULL,
+  apellido2 VARCHAR(20) NOT NULL
+  fecha_nac DATE,
+  sexo SET(hombre, mujer)
+);
+  
+  

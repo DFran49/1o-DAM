@@ -1,0 +1,10 @@
+1- E (Instalar JDK) - D (La dirección de obtención cambia)
+2- D (Buscar ruta instalación JDK) - C (La instalación no es compatible con otras versiones)
+3- F (Introducir Path en variable de entorno) - A (Acceder a propiedades del sistema)
+4- B (Ejecutar javac) - E (Si fallo, repetir asignar variable de entorno)
+5- A (Crear programa) - G (Editor de texto)++
+6- G (Compilar programa) - B (Si hay errores, los muestra)
+7- C (Ejecutar programa en JVM) - F (Lanzar comando java <nombre> y JVM lo ejecuta)
+
+
+Compilar, Ejecutar, edición de textos, depurar, indicación de errores de sintaxis, soporte de varios lenguajes, 

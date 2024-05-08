@@ -1,0 +1,61 @@
+-- Crear el usuario
+CREATE USER centro IDENTIFIED BY "centro";
+
+-- Mostrar los privilegios asignados al usuario “centro”.
+SHOW GRANTS FOR centro;
+
+-- ¿Tiene el usuario “centro” acceso a la BD creada en el ejercicio 5? ¿a qué se debe?
+-- No tiene acceso a la base de datos, porque no tiene los privilegios necesarios para acceder.
+
+-- Asignar permiso de consulta a la tabla MODULO (o ASIGNATURA si se ha cambiado el nombre
+anteriormente).
+GRANT SELECT ON centro.ASIGNATURA TO centro;
+
+-- ¿Tiene ahora el usuario “centro” acceso a la BD creada en el ejercicio 5? ¿a qué se debe?
+--Si tiene acceso a la BD ya que ahora tiene concedido los privilegios de select, pero sol para "ASIGNATURA".
+
+-- Utilizando HeidiSQL intentar dar de alta un registro en la tabla MODULO (o ASIGNATURA si se
+-- ha cambiado el nombre anteriormente) utilizando el usuario “centro”. ¿Se puede? ¿razonar la
+-- respuesta?
+-- No se puede, tienes acceso a la tabla asignatura pero no puedes crear nada, solo puedes ver.
+
+-- Asignar permiso de inserción a todas las tablas de la BD creada en el ejercicio 5.
+GRANT INSERT ON centro.* TO centro;
+
+-- Mostrar los privilegios asignados al usuario “centro”. ¿Qué tablas se muestran al seleccionar la
+-- BD si se entra con el usuario “centro”? ¿se pueden consultar los datos de la tabla ALUMNO? ¿a
+-- qué se debe?
+-- Todas las tablas. No se pueden consultar porque con la tabla alumno no tiene permiso para consulta.
+
+-- Revocar todos los permisos asignados al usuario “centro” sobre la tabla ALUMNO. ¿qué
+-- dificultades presenta?
+-- Da error, ya que hay quitar el permiso insert concedido a nivel de base de datos y posteriormente
+-- conceder permiso de INSERT tabla a tabla.
+REVOKE INSERT ON centro.* FROM centro;
+GRANT INSERT ON centro.PROFESOR TO centro;
+GRANT INSERT ON centro.ASIGNATURA TO centro;
+GRANT INSERT ON centro.MATRICULA TO centro;
+GRANT INSERT ON centro.ALUMNO TO centro;
+
+-- Retirar el permiso de consulta al usuario “centro” sobre la tabla MODULO (o ASIGNATURA si
+-- se ha cambiado el nombre anteriormente). Asignar el permiso de selección sobre las columnas
+-- “codigo” y “nombre” de la tabla MODULO (o ASIGNATURA si se ha cambiado el nombre
+-- anteriormente) al usuario “centro”.
+REVOKE SELECT ON centro.ASIGNATURA FROM centro;
+GRANT SELECT (codigo, nombre) ON centro.ASIGNATURA TO centro;
+
+-- Asignar el permiso para crear tablas al usuario “centro” sobre la BD creada en el ejercicio 5.
+GRANT CREATE ON centro.* TO centro;
+
+-- Cambiar la clave al usuario “centro”, establecer como nueva clave “centro1”.
+ALTER USER centro IDENTIFIED BY "centro1"
+
+-- Quitar todos los permisos asignados al usuario “centro”.SHOW GRANTS FOR centro;
+REVOKE SELECT ON centro.asignatura FROM centro;
+
+-- Dar todos los permisos al usuario “centro” sobre la BD creada en el ejercicio 5, con la
+-- posibilidad de otorgar permisos a otros usuarios.
+GRANT ALL PRIVILEGES ON centro.* TO centro WITH GRANT OPTION;
+
+-- Borrar el usuario “centro”.
+DROP USER centro;

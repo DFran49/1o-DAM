@@ -1,0 +1,19 @@
+import java.util.*;
+
+public static void main (String[] args) {
+	System.out.println("Cuántas notas va a introducir");
+	int NumNotas = new Scanner(System.in).nextInt;
+	double SumNotas = 0;
+	double VarTemp
+	for (i=1:i<=NumNotas:i++) {
+		System.out.println("Introduzca la nota "+i);
+		VarTemp = new Scanner(System.in).nextDouble;
+		SumNotas = SumNotas + VarTemp;
+	}
+	System.out.println("La media de las notas es: "+(SumNotas/i));
+}
+
+
+
+El ejercicio de la pantalla recoge notas de alumnos hasta que una no sea del 0 al 10 y calcula su media
+Al introducirle datos, no va a terminar de recoger datos.

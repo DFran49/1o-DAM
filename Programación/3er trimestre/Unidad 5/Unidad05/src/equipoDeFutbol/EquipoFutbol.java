@@ -49,34 +49,28 @@ public class EquipoFutbol implements Nombrable{
 
     public void pagarSueldoEmpleados() {
         double aPagar = 0;
+        boolean repartir = false;
         for (int i = 0; i < this.empleados.size() ; i++) {
-            if (this.presupuesto < this.empleados.get(i).getSueldo()) {
-                aPagar = presupuesto / this.empleados.size() - (i+1);
-                try {
-                    this.empleados.get(i).cobrar(aPagar);
-                } catch (CabreoException e) {
-                    System.err.println(e.getMessage());
-                }
-                this.presupuesto -= aPagar;
-            } else {
-                if (this.empleados.get(i) instanceof Futbolista futbolista && futbolista.esPrimado()) {
-                    aPagar = futbolista.getSueldo()*1.10;
-                    System.out.println(futbolista+" sueldo "+aPagar);
-                    try {
-                        futbolista.cobrar(aPagar);
-                    } catch (CabreoException e) {
-                        System.err.println(e.getMessage());
-                    }
-                    this.presupuesto -= aPagar;
-                } else  {
-                    try {
-                        this.empleados.get(i).cobrar(this.empleados.get(i).getSueldo());
-                    } catch (CabreoException e) {
-                        System.err.println(e.getMessage());
-                    }
+            if (!repartir) {
+                if (this.empleados.get(i) instanceof EmpleadoPrimable futbolista && futbolista.esPrimado() && !repartir) {
+                    aPagar = (int) (this.empleados.get(i).getSueldo() *1.10);
+                } else if (this.presupuesto < this.empleados.get(i).getSueldo() && !repartir) {
+                    aPagar = this.presupuesto / (this.empleados.size() - i);
+                    repartir = true;
+                } else if (!repartir) {
+                    aPagar = this.empleados.get(i).getSueldo();
                 }
             }
+
+            try {
+                this.empleados.get(i).cobrar(aPagar);
+            } catch (CabreoException e) {
+                System.err.println(e.getMessage());
+            }
+            this.presupuesto -= aPagar;
+            System.out.println(this.presupuesto);
         }
+
     }
 
     //------------------------------------------------------------------------------------------------------------------

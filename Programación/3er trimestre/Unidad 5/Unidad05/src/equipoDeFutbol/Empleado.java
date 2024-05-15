@@ -28,8 +28,11 @@ public class Empleado implements Nombrable{
     //------------------------------------------------------------------------------------------------------------------
     //METODOS
     public void cobrar(double cantidad) throws CabreoException {
-        if (cantidad < getSueldo()) throw new CabreoException("Al empleado "+getNombre()+" no se le han pagado "+getSueldo()+" euros");
-        this.dinero += getSueldo();
+        if (cantidad < getSueldo()) {
+            this.dinero += cantidad;
+            throw new CabreoException("Al empleado "+getNombre()+" no se le han pagado "+getSueldo()+" euros");
+        }
+        this.dinero += cantidad;
     }
 
     //------------------------------------------------------------------------------------------------------------------

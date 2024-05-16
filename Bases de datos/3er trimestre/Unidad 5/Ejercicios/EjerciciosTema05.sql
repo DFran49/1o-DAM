@@ -195,26 +195,45 @@ Reflexionar sobre las siguientes cuestiones:
         (PRESTEC), así como crear una nueva factura (FACTURA) con los correspondientes detalles de factura
         en la tabla DETALLFACTURA. ¿Por qué es interesante definir una transacción que haga este conjunto de
         operaciones en una unidad?
+        -- Porque si falla la inserción en alguna de las tablas, no se inserta en ninguna.
+
     b) ¿Cuáles deben ser las operaciones previas a la ejecución de una transacción como la diseñada?
+    -- Bloquear las entradas que se va a utilizar con FOR UPDATE y verificar que no existen las que se van a introducir.
+
     c) ¿Cuáles deben ser las operaciones a ejecutar al finalizar la transacción?
+    -- Si todo va bien COMMIT, y si algo falla, ROLLBACK.
+
     d) ¿Qué otras operaciones se podrían agrupar a través de transacciones para garantizar la consistencia?
+    -- 
+
 Crear el esquema de la transacción, e indicar las sentencias SQL que contendría y el orden de ejecución.*/
+START TRANSACTION;
+INSERT INTO prestec VALUES (...);
+INSERT INTO factura VALUES (...);
+INSERT INTO detallfactur VALUES (...);
+COMMIT;
 
 /* 32. Considerar que se tiene una tabla donde se almacena información sobre cuentas bancarias definida de la
 Suponer que se quiere realizar una transferencia de dinero entre dos cuentas bancarias con la siguiente
 transacción:
     a) ¿Qué ocurriría si el sistema falla o si se pierde la conexión entre el cliente y el servidor después de
         realizar la primera sentencia UPDATE?
+        -- Al ser una transacción, si no se completa, se descartan los cambios.
+
     b) ¿Qué ocurriría si no existiese alguna de las dos cuentas (id = 20 o id = 30)?
+    -- Daría un fallo, y al tener un fallo, la transacción llegaría al ROLLBACK por el try catch.
+
     c) ¿Qué ocurriría en el caso de que la primera sentencia UPDATE falle porque hay menos de 100 € en la
         cuenta y no se cumpla la restricción del CHECK establecida en la tabla?
+        -- Lo mismo de antes, al ser un fallo, se hace ROLLBACK.
+
+
 Para conocer el número de visitas a ciertas páginas de un sitio web, se
 utiliza una tabla en una BD de MariaDB en la que se almacena el identificador
 de cada página, un nombre simbólico de la página y el número de visitas que
 recibe. Cada vez que un usuario accede a una página, se debe incrementar el
 número de visitas correspondiente. El esquema relacional y una posible
 extensión inicial son las que pueden ver en la imagen: */
-
 
 /* 33. Crear una tabla en MariaDB acorde al enunciado y al esquema relacional de la imagen. Utilizar una secuencia
 autonumérica para la columna id y usar valores por defecto (0) para la columna contador. */
@@ -241,41 +260,45 @@ sesión los datos con la siguiente sentencia:
 UPDATE paginas set contador = <nuevo_valor> WHERE id = <id_página_seleccionada>;
 COMMIT;
 ¿Hay pérdida de actualizaciones? ¿es esto un problema? */
-
+-- No, no hay y si podría ser un porblema, aunque los SGBD tienen mecanismos de control que lo evitan.
 
 /* 36. Repetir el ejercicio anterior pero esta vez, cambiar la sentencia SELECT por:
 SELECT contador FROM paginas WHERE id = <id_página_seleccionada> FOR UPDATE;
 ¿Sigue habiendo pérdida de actualizaciones? ¿qué ocurre? ¿por qué? */
+-- En la transacción 2 se queda esperando a que se haga el COMMIT de la transacción 1 porque esa entrada está bloqueada por el FOR UPDATE.
 
 /* 37. Volver a hacer el ejercicio 35 pero esta vez sin utilizar la cláusula FOR UPDATE en el SELECT y cambiar la
 primera sentencia por la siguiente:
 SET SESSION TRANSACTION ISOLATION LEVEL SERIALIZABLE;
 ¿Sigue habiendo pérdida de actualizaciones? ¿qué ocurre? ¿por qué? */
+-- No. Se produce un deadlock porque una transacción intenta acceder a la entrada que tiene bloqueada la otra y viceversa.
 
 
 /* 38. Cambiar el nivel de aislamiento a READ COMMITTED. Ejecutar las siguientes transacciones (lecturas sucias):
 ¿Hay lecturas sucias en la transacción 2? ¿y si se cambia el ROLLBACK final de la transacción 1 por un COMMIT? */
-
+-- No hay lectura sucia en el nivel READ COMMITED. Si se cambia el ROLLBACK por un COMMIT, el resultado final es igual porque la transacción 2 se queda
+-- bloqueada hasta que la transacción 1 termina.
 
 /* 39. Volver a repetir el ejercicio anterior usando en ambas transacciones SELECT ... FOR UPDATE. ¿Qué ocurre?
 ¿por qué? */
-
+-- La transacción 2 espera a que la transacción 1 termine porque la entrada está bloqueada a cambios por el FOR UPDATE.
 
 /* 40. Volver a repetir el ejercicio 38 sin utilizar la cláusula SELECT ... FOR UPDATE y cambiar el nivel de aislamiento
 a SERIALIZABLE. ¿Qué ocurre? ¿por qué? */
-
+-- Lo mismo, la transacción 2 espera a que se desbloqueen las entradas.
 
 /* 41. Cambiar el nivel de aislamiento a READ COMMITTED. Ejecutar las siguientes transacciones (lectura no
 repetible):
 ¿Son las dos lecturas de la transacción 1 iguales? ¿Por qué? */
-
+-- No, porque al ser lectura confirmada y la transacción 2 haber confirmado su actualización, la transacción 1 lee los datos modificados por la transacción 2.
 
 /* 42. Volver a repetir el ejercicio anterior usando nivel de aislamiento SERIALIZABLE. ¿Qué ocurre? ¿por qué? */
-
+-- Se lee lo mismo en ambas consultas de la transacción 1 porque una vez que se han leido datos, no se pueden mostrar otros datos en esa transacción en el nivel serializable.
 
 /* 43. Cambiar el nivel de aislamiento a READ COMMITTED. Ejecutar cada una de las transacciones siguientes (lectura
 fantasma):
 ¿Son las dos lecturas de la transacción 1 iguales? ¿aparece la fila fantasma? ¿por qué? */
-
+-- No son iguales porque este nivel de aislamiento no controla si se añaden o se eliminan filas mediante otra transacción mientras se ejecuta la primera.
 
 /* 44. Volver a repetir el ejercicio anterior usando el nivel de aislamiento SERIALIZABLE. ¿Qué ocurre? ¿por qué? */
+-- No se muestran las filas fantasma porque el nivel serializable evita que se muestren las filas nuevas durante la transacción.

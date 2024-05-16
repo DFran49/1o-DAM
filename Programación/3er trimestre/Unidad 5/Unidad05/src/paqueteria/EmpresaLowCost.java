@@ -29,6 +29,7 @@ public class EmpresaLowCost implements EmpresaPaqueteria{
             this.siguienteTransportista = 0;
         }
         this.transportistas[this.siguienteTransportista].subirCamion(p);
+        this.siguienteTransportista += 1;
     }
 
     @Override

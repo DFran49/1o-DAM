@@ -168,3 +168,114 @@ WHERE num_socio IN (
 															FROM alquiler
                                                             WHERE fec_alquila BETWEEN '2014/10/01' AND '2014/12/31'
 															GROUP BY socio) AS tabla1 ON (tabla1.socio = alquiler.socio)));
+
+/*27. ¿Qué son las propiedades ACID?*/
+-- Son las transacciones que garantizan que las transacciones se puedan realizar en una base de datos de forma segura.
+
+/*28. ¿Cuáles son los cuatro problemas de concurrencia en el acceso a datos que pueden suceder cuando se realizan
+transacciones? Poner un ejemplo para cada uno de ellos.*/
+-- 1. Pérdida de actualizaciones. Cuando se lee la misma entrada en 2 transacciones y ambas la modifican.
+-- 2. Lecturas sucias. Cuando se actualiza una entrada en una transacción, y en otra se selecciona esa entrada, 
+    -- haciendo que la transacción 2 lea datos que pueden ser descartados
+-- 3. Lecturas no repetibles. Cuando una transacción consula la misma entrada 2 veces y recibe datos distintos debido a una modificación en otra transacción.
+-- 4. Lecturas fantasma. Cuando una transacción consulta un conjunto de entradas 2 veces, y a la segunda encuentra más entradas debido a una inserción en la transacción 2.
+
+/*29. Cuando se trabaja con transacciones, el SGBD puede bloquear conjuntos de datos para evitar o permitir que
+sucedan los problemas de concurrencia comentados en el ejercicio anterior. ¿Cuáles son los cuatro niveles de
+aislamiento que se pueden solicitar al SGBD?*/
+-- Lectura no confirmada, Lectura confirmada, Lectura repetible y Lectura serializable.
+
+/* 30. ¿Cuál es el nivel de aislamiento que se usa por defecto en las tablas InnoDB de MariaDB? ¿Es posible realizar
+transacciones sobre tablas MyISAM de MariaDB? */
+-- La lectura repetible.
+
+/*31. Basándose en el siguiente esquema:
+Reflexionar sobre las siguientes cuestiones:
+    a) Cuando un cliente alquila una o varias películas, hay que registrar este hecho en la tabla préstamo
+        (PRESTEC), así como crear una nueva factura (FACTURA) con los correspondientes detalles de factura
+        en la tabla DETALLFACTURA. ¿Por qué es interesante definir una transacción que haga este conjunto de
+        operaciones en una unidad?
+    b) ¿Cuáles deben ser las operaciones previas a la ejecución de una transacción como la diseñada?
+    c) ¿Cuáles deben ser las operaciones a ejecutar al finalizar la transacción?
+    d) ¿Qué otras operaciones se podrían agrupar a través de transacciones para garantizar la consistencia?
+Crear el esquema de la transacción, e indicar las sentencias SQL que contendría y el orden de ejecución.*/
+
+/* 32. Considerar que se tiene una tabla donde se almacena información sobre cuentas bancarias definida de la
+Suponer que se quiere realizar una transferencia de dinero entre dos cuentas bancarias con la siguiente
+transacción:
+    a) ¿Qué ocurriría si el sistema falla o si se pierde la conexión entre el cliente y el servidor después de
+        realizar la primera sentencia UPDATE?
+    b) ¿Qué ocurriría si no existiese alguna de las dos cuentas (id = 20 o id = 30)?
+    c) ¿Qué ocurriría en el caso de que la primera sentencia UPDATE falle porque hay menos de 100 € en la
+        cuenta y no se cumpla la restricción del CHECK establecida en la tabla?
+Para conocer el número de visitas a ciertas páginas de un sitio web, se
+utiliza una tabla en una BD de MariaDB en la que se almacena el identificador
+de cada página, un nombre simbólico de la página y el número de visitas que
+recibe. Cada vez que un usuario accede a una página, se debe incrementar el
+número de visitas correspondiente. El esquema relacional y una posible
+extensión inicial son las que pueden ver en la imagen: */
+
+
+/* 33. Crear una tabla en MariaDB acorde al enunciado y al esquema relacional de la imagen. Utilizar una secuencia
+autonumérica para la columna id y usar valores por defecto (0) para la columna contador. */
+CREATE TABLE paginas (
+    id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(20) NOT NULL,
+    contador INT UNSIGNED DEFAULT 0
+);
+
+/* 34. Insertar los datos que se muestran en la imagen usando el código más simple posible, aprovechando que el
+campo id es autonumérico y que el campo contador puede tomar valores por defecto (insertar filas asignando
+valores sólo a la columna nombre). */
+INSERT INTO paginas(nombre) VALUES ('Portada'), ('Noticias'), ('Resumen'), ('Comentarios'), ('Eventos');
+
+/* 35. Abrir una terminal y HeidiSQL e iniciar sesión desde ambas aplicaciones. Seleccionar la BD donde se ha creado
+la tabla y seguidamente cambiar el nivel de aislamiento a READ COMMITTED mediante la siguiente sentencia:
+SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED;
+START TRANSACTION;
+Escoger cualquiera de las páginas insertadas en el ejercicio anterior y ejecutar la siguiente sentencia:
+SELECT contador FROM paginas WHERE id = <id_página_seleccionada>;
+El objetivo es que desde cada una de las sesiones se sume al valor leído en la consulta anterior un número
+distinto (por ejemplo, desde la terminal se suma 100 y desde HeidiSQL se le suma 200). Actualizar desde cada
+sesión los datos con la siguiente sentencia:
+UPDATE paginas set contador = <nuevo_valor> WHERE id = <id_página_seleccionada>;
+COMMIT;
+¿Hay pérdida de actualizaciones? ¿es esto un problema? */
+
+
+/* 36. Repetir el ejercicio anterior pero esta vez, cambiar la sentencia SELECT por:
+SELECT contador FROM paginas WHERE id = <id_página_seleccionada> FOR UPDATE;
+¿Sigue habiendo pérdida de actualizaciones? ¿qué ocurre? ¿por qué? */
+
+/* 37. Volver a hacer el ejercicio 35 pero esta vez sin utilizar la cláusula FOR UPDATE en el SELECT y cambiar la
+primera sentencia por la siguiente:
+SET SESSION TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+¿Sigue habiendo pérdida de actualizaciones? ¿qué ocurre? ¿por qué? */
+
+
+/* 38. Cambiar el nivel de aislamiento a READ COMMITTED. Ejecutar las siguientes transacciones (lecturas sucias):
+¿Hay lecturas sucias en la transacción 2? ¿y si se cambia el ROLLBACK final de la transacción 1 por un COMMIT? */
+
+
+/* 39. Volver a repetir el ejercicio anterior usando en ambas transacciones SELECT ... FOR UPDATE. ¿Qué ocurre?
+¿por qué? */
+
+
+/* 40. Volver a repetir el ejercicio 38 sin utilizar la cláusula SELECT ... FOR UPDATE y cambiar el nivel de aislamiento
+a SERIALIZABLE. ¿Qué ocurre? ¿por qué? */
+
+
+/* 41. Cambiar el nivel de aislamiento a READ COMMITTED. Ejecutar las siguientes transacciones (lectura no
+repetible):
+¿Son las dos lecturas de la transacción 1 iguales? ¿Por qué? */
+
+
+/* 42. Volver a repetir el ejercicio anterior usando nivel de aislamiento SERIALIZABLE. ¿Qué ocurre? ¿por qué? */
+
+
+/* 43. Cambiar el nivel de aislamiento a READ COMMITTED. Ejecutar cada una de las transacciones siguientes (lectura
+fantasma):
+¿Son las dos lecturas de la transacción 1 iguales? ¿aparece la fila fantasma? ¿por qué? */
+
+
+/* 44. Volver a repetir el ejercicio anterior usando el nivel de aislamiento SERIALIZABLE. ¿Qué ocurre? ¿por qué? */

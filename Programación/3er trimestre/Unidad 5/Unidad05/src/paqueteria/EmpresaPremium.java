@@ -24,6 +24,7 @@ public class EmpresaPremium implements EmpresaPaqueteria{
             case 1 -> this.rapido.subirCamion(p);
             case 2 -> this.medio.subirCamion(p);
             case 3 -> this.lento.subirCamion(p);
+            default -> throw new IllegalArgumentException("Prioridad no disponible");
         }
     }
 

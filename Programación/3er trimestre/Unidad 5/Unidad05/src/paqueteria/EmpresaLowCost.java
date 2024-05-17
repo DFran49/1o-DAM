@@ -13,10 +13,9 @@ public class EmpresaLowCost implements EmpresaPaqueteria{
     //------------------------------------------------------------------------------------------------------------------
     //CONSTRUCTOR
     public EmpresaLowCost(int n) {
-        Random tEspera = new Random();
         this.transportistas = new Transportista[n];
         for (int i = 0; i < n ; i++) {
-            this.transportistas[i] = new Transportista(tEspera.nextInt((80-40))+40);
+            this.transportistas[i] = new Transportista(new Random().nextInt(40,81));
         }
         this.siguienteTransportista = 0;
     }
@@ -29,7 +28,6 @@ public class EmpresaLowCost implements EmpresaPaqueteria{
             this.siguienteTransportista = 0;
         }
         this.transportistas[this.siguienteTransportista].subirCamion(p);
-        this.siguienteTransportista += 1;
     }
 
     @Override

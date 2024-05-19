@@ -1,0 +1,364 @@
+
+:root{
+    /* PAGE */
+    --gradient: linear-gradient(to right, rgba(140, 54, 108, 0.8) 0%,rgba(111, 100, 231, 0.8) 100%);
+
+    /* HEADER */
+    --header-background: #F7EFAF; /* rgba(156, 213, 222, 1);*/
+    --header-font: "AirAmericana"; /* FUENTE DEL HEADER */
+
+    --titulo-color: orange;
+    --titulo-shadow1: red;
+    --titulo-shadow2: black;
+
+    --logo-color: purple;
+    --logo-background: orange;
+    --logo-border: gray;
+    --logo-shadow: purple;
+
+    /* NAV */
+    --nav-background: orange; /* rgba(156, 213, 222, 0.9); */
+
+    --menu-hover-background: #F7EFAF;
+    --menu-text-color: black;
+
+    --menu-button-background: #F7EFAF;
+    --menu-button-border: darkgray;
+    --menu-button-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+
+    /* MAIN */
+
+    --banner-background: #8CCDA5;
+    --banner-text-color: black;
+
+    --card-background: white;
+    
+    --aside-background: rgba(156, 213, 222, 1);
+    --aside-text-color: purple;
+    --aside-links-color: white;
+
+    --button-background: #444;
+    --button-text-color: white;
+    --button-hover-background: orange;
+    
+    /* FOOTER */    
+
+    --footer-background: pink;
+
+    --gap-size: 15px;
+
+    /* linear-gradient(to right, #8c366c 0%,#6f64e7 100%); */
+    /* rgba(221, 137, 255,0.5); */
+}
+
+@font-face {
+    font-family: "AirAmericana";
+    src: url(../fonts/AirAmericana.ttf);
+  }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background: var(--gradient);
+    font-family: Roboto;
+}
+
+img, video {
+    width: 10%;
+}
+
+/* HEADER */
+header {
+    background: var(--header-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 12vh;
+}
+
+header > p , h1 {
+    font-family: var(--header-font);
+}
+
+header > p {
+    background: var(--logo-background);
+    border: var(--logo-border) solid 1px;
+    color: var(--logo-color);
+    box-shadow: 2px 2px 2px var(--logo-shadow);
+    font-size: 2rem;
+    width: 3%;
+    text-align: center;
+}
+
+header > h1 {
+    color: var(--titulo-color);
+    text-shadow: 1px 1px var(--titulo-shadow1), 3px 3px var(--titulo-shadow2) ;
+    font-size: 5rem;
+}
+
+/* NAV */
+nav {
+    background: var(--nav-background);
+    display: flex;
+    margin-bottom: var(--gap-size);
+}
+
+nav > #menu {
+    display: none;
+}
+
+nav > ul {
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    list-style-type: none;
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+    width: 100%;
+    margin: 10px 20px;
+    padding: 5px 0px 5px 0px;
+    overflow: hidden;
+}
+
+nav > ul > li > a {
+    color: var(--menu-text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* MAIN */
+main  {
+    display: grid;
+    grid-template-areas: 
+    "banner banner banner"
+    "aside computadoras computadoras"
+    "aside complementos complementos"
+    "aside televisores televisores";
+    gap: var(--gap-size);
+}
+
+main > article, main > section {
+    display: flex;
+    justify-content: space-around;
+    height: 20vh;
+}
+
+main > article > div, main > section > div {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+main > article {
+    grid-area: banner;
+    background: var(--banner-background);
+}
+
+main > article > div > h4 {
+    color: white;
+    font-size: 1.5rem;
+    padding: 20px 0;
+    border-bottom: solid var(--card-background) 5px ;
+}
+
+main > article > div > p {
+    text-align: justify;
+}
+
+main > article > video {
+    width: 30%;
+}
+
+main > section > div {
+    padding: 10px;
+}
+
+main > section > div > h4 {
+    color: black;
+    font-size: 1.3rem;
+    padding: 20px 0;
+}
+
+main > section > img {
+    width: 40%;
+    filter: grayscale(100%);
+    transition: 2s;
+}
+
+main > section > img:hover {
+    filter: grayscale(0%);
+}
+
+main > section:nth-of-type(1) {
+    grid-area: computadoras;
+    background-color: var(--card-background);
+}
+
+main > section:nth-of-type(2) {
+    grid-area: complementos;
+    background-color: var(--card-background);
+}
+
+main > section:nth-of-type(3) {
+    grid-area: televisores;
+    background-color: var(--card-background);
+}
+
+main > article > div > button, main > section > div > button {
+    align-self: flex-end;
+    width: 15%;
+    height: 40px;
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    border: none;
+}
+
+main > article > div > button:hover, main > section > div > button:hover {
+    background-color: var(--button-hover-background);
+}
+
+/* ASIDE */
+aside {
+    grid-area: aside;
+    background: var(--aside-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+aside > img {
+    width: 60%;
+    border-radius: 25%;
+}
+
+aside > p {
+    color: var(--aside-text-color);
+    width: 60%;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+aside > ul {
+    height: 30%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+aside > ul > li > a {
+    color: var(--aside-links-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* FOOTER */
+footer {
+    background: var(--footer-background);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--gap-size);
+    padding: 0px 15px 0px 15px;
+    height: 4vh;
+}
+
+footer > div > i {
+    font-size: 1.5rem;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+    header {
+        height: 150px;
+    }
+
+    header > p {
+        width: 10%;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main > article {
+        font-size: 0.8rem;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        height: auto;
+    }
+
+    main > article > video {
+        width: 90%;
+        padding-top: 10px;
+    }
+
+    main > article > div {
+        width: 90%;
+    }
+
+    main > aside {
+        order: 5;
+        flex-direction: row;
+        height: 200px;
+        padding: 20px;
+    }
+
+    main > aside > img {
+        width: 30%;
+        height: 150px;
+    }
+
+    main > aside > p {
+        padding: 10px;
+    }
+
+    main > aside > ul {
+        align-self: flex-start;
+    }
+
+    main > aside > ul > li {
+        margin-top: 50px;
+    }
+
+    main > section {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    header {
+        height: 100px;
+        flex-direction: row;
+    }
+    header > h1 {
+        font-size: 50px;
+    }
+
+    main > section {
+        flex-direction: column-reverse;
+    }
+
+    main > section > img {
+        width: 100%;
+    }
+
+    main > section > div {
+        width: 100%;
+    }
+}

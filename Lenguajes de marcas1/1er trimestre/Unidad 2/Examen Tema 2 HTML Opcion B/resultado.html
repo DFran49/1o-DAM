@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Recuperación Unidad 2 - Formularios con GET</title>
+    <meta charset="utf-8">
+    <style>
+        table,
+        th,
+        td,
+        tr {
+            border: 1px solid black;
+        }
+
+        th {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p><b>PARÁMETROS: </b> <br /> <span id="ejRef"></span></p>
+
+    <table>
+        <tr>
+            <th colspan="2">PARÁMETROS RECIBIDOS</th>
+        </tr>
+        <tr>
+            <td>
+                Nombre:
+            </td>
+            <td>
+                <span id="nombre"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Apellidos:
+            </td>
+            <td>
+                <span id="apellidos"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Fecha:
+            </td>
+            <td>
+                <span id="fecha"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Conocimientos:
+            </td>
+            <td>
+                <span id="conocimientos"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Preferencia:
+            </td>
+            <td>
+                <span id="preferencia"></span>
+            </td>
+        </tr>  
+        <tr>
+            <td>
+                Extras de la inscripción:
+            </td>
+            <td>
+                <span id="input_1"></span>
+                <br />
+                <span id="input_2"></span>
+                <br />
+                <span id="input_3"></span>
+                <br />
+                <span id="input_4"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Asistencia a Congresos:
+            </td>
+            <td>
+                <span id="veces"></span>
+            </td>
+        </tr>  
+        <tr>
+        <tr>
+            <td>
+                Comentarios:
+            </td>
+            <td>
+                <span id="cuenta"></span>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+
+        const urlParams = new URLSearchParams(window.location.search);
+
+        var myElement = document.getElementById("ejRef");
+        myElement.innerHTML = urlParams;
+
+        myElement = document.getElementById("nombre");
+        myElement.innerHTML = urlParams.get("nombre");
+
+        myElement = document.getElementById("apellidos");
+        myElement.innerHTML = urlParams.get("apellidos");
+
+        myElement = document.getElementById("fecha");
+        myElement.innerHTML = urlParams.get("fecha");
+
+        myElement = document.getElementById("conocimientos");
+        myElement.innerHTML = urlParams.get("conocimientos");
+
+        myElement = document.getElementById("preferencia");
+        myElement.innerHTML = urlParams.get("preferencia");
+
+        myElement = document.getElementById("input_1");
+        myElement.innerHTML = urlParams.get("interes_1");
+
+        myElement = document.getElementById("input_2");
+        myElement.innerHTML = urlParams.get("interes_2");
+
+        myElement = document.getElementById("input_3");
+        myElement.innerHTML = urlParams.get("interes_3");
+
+        myElement = document.getElementById("input_4");
+        myElement.innerHTML = urlParams.get("interes_4");
+
+        myElement = document.getElementById("veces");
+        myElement.innerHTML = urlParams.get("veces");
+
+        myElement = document.getElementById("cuenta");
+        myElement.innerHTML = urlParams.get("c_adicionales");
+
+    </script>
+
+</body>
+
+</html>

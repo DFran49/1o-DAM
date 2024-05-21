@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<personas>
+    <persona>
+        <nombre>María Jímenez Escudin</nombre>
+        <altura>1,69</altura>
+        <peso>69</peso>
+        <pasatiempos>Comics, Baloncesto, Gaming</pasatiempos>
+        <soltero>true</soltero>
+        <direccion>
+            <calle>Avenida Soleares</calle>
+            <numero>44</numero>
+            <pais>Chile</pais>
+        </direccion>
+    </persona>
+    <persona>
+        <nombre>Pedro Motos Sandez</nombre>
+        <altura>1,69</altura>
+        <peso>72</peso>
+        <pasatiempos>Programación, Senderismo</pasatiempos>
+        <soltero>true</soltero>
+        <direccion>
+            <calle>Torero Pedro Cano</calle>
+            <numero>78</numero>
+            <pais>México</pais>
+        </direccion>
+    </persona>
+</personas>

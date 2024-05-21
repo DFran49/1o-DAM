@@ -1,0 +1,28 @@
+<? xml version="1.0" encoding="UTF-8"?>
+
+<CFGS nombre="DAM">
+    <Curso>1º</Curso>
+    <Aula id="A16">
+        <Planta>Primera</Planta>
+    </Aula>
+    <Modulo cod="0484">
+        <Nombre>Bases de datos</Nombre>
+        <H.Sem.>6</H.Sem.>
+        <H.Total>192</H.Total>
+    </Modulo>
+    <Modulo cod="0487">
+        <Nombre>Entornos de desarrollo</Nombre>
+        <H.Sem.>3</H.Sem.>
+        <H.Total>96</H.Total>
+    </Modulo>
+    <Modulo cod="0373">
+        <Nombre>LMSGI</Nombre>
+        <H.Sem.>4</H.Sem.>
+        <H.Total>128</H.Total>
+    </Modulo>
+    <Modulo cod="0485">
+        <Nombre>Programación</Nombre>
+        <H.Sem.>8</H.Sem.>
+        <H.Total>256</H.Total>
+    </Modulo>
+</CFGS>

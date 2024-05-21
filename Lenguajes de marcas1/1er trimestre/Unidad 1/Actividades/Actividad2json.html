@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>W3Schools Internal Note</h1>
+<div>
+<b>Nombre:</b> <span id="nombre"></span><br>
+<b>Apellidos:</b> <span id="apellidos"></span><br>
+<b>Telefono1:</b> <span id="telefono1"></span><br>
+<b>Telefono2:</b> <span id="telefono2"></span><br>
+<b>Direccion:</b> <span id="direccion"></span><br>
+<b>Email:</b> <span id="email"></span>
+</div>
+
+<script>
+var xmlhttp, xmlDoc;
+xmlhttp = new XMLHttpRequest();
+xmlhttp.open("GET", "Actividad1.xml", false);
+xmlhttp.send();
+xmlDoc = xmlhttp.responseXML;
+document.getElementById("nombre").innerHTML=
+xmlDoc.getElementsByTagName("nombre")[0].childNodes[0].nodeValue;
+document.getElementById("apellidos").innerHTML=
+xmlDoc.getElementsByTagName("apellidos")[0].childNodes[0].nodeValue;
+document.getElementById("telefono1").innerHTML=
+xmlDoc.getElementsByTagName("telefono1")[0].childNodes[0].nodeValue;
+document.getElementById("telefono2").innerHTML=
+xmlDoc.getElementsByTagName("telefono2")[0].childNodes[0].nodeValue;
+document.getElementById("direccion").innerHTML=
+xmlDoc.getElementsByTagName("direccion")[0].childNodes[0].nodeValue;
+document.getElementById("email").innerHTML=
+xmlDoc.getElementsByTagName("email")[0].childNodes[0].nodeValue;
+
+</script>
+
+</body>
+</html>

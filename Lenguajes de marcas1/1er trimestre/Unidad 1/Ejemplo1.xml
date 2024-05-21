@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8">
+<LibroCatalogo>
+    <Libro ISBN="978-0123456789">
+        <Titulo>XML para principiantes</Titulo>
+        <Autor>Jane Doe</Autor>
+        <Precio>29.95</Precio>
+    </Libro>
+    <Libro ISBN="978-9876543210">
+        <Titulo>Programación en python</Titulo>
+        <Autor>John Simth</Autor>
+        <Precio>39.99</Precio>
+    </Libro>
+</LibroCatalogo>

@@ -1,0 +1,90 @@
+TABLE, TD{
+    border: solid lightgray;
+}
+
+#Horario, #Horario TR, #Horario TD{
+    border: solid lightgray;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#Horario TD{
+    width: 80px;
+    height: 25px;
+}
+
+#Junta, #Junta TR, #Junta TD {
+    border: solid, lightgray;
+    border-spacing: 4px;
+}
+
+.CelJunta{
+    width: 500px;
+    height: 25px;
+    background-color: aqua;
+}
+
+#DentroJunta, #DentroJunta TR{
+    border: solid;
+    border-spacing: 4px;
+    margin: 3px;
+}
+
+.TablaDentro {
+    border: solid;
+    border-spacing: 4px;
+    margin: 3px;
+    width: 75px;
+    height: 25px;
+}
+
+.JuntaColor{
+    border: solid;
+    border-spacing: 4px;
+    margin: 3px;
+    height: 25px;
+    background: blue;
+    width: 266px;
+}
+
+#TXTJunta {
+    width: 500px;
+    height: 25px;
+    background-color: aqua;
+    text-align: left;
+    
+}
+
+#IMGJunta {
+    width: 150px;
+    height: 100px;
+}
+
+#CelJuntaIMG {
+    text-align: center;
+    width: 500px;
+    height: 25px;
+    background-color: aqua;
+}
+
+DIV {
+    float: left;
+    border: solid 4px lightgray;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#Discos, #Discos TR, #Discos TD {
+    margin: 5px 3px 5px 1px;
+    text-align: center;
+    border: solid black;
+    border-collapse: collapse;
+} 
+
+.TDGB TD {
+    font-weight: normal;
+}
+
+.TDBOLD {
+    font-weight: bold;
+}

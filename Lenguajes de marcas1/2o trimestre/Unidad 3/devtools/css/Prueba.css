@@ -1,0 +1,106 @@
+@font-face {
+	font-family: 'pacificoregular';
+	src: 	url('../fonts/pacifico-regular-webfont.woff2') format('woff2'),
+		 url('../fonts/pacifico-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+*{
+	margin: 0px;
+	vertical-align: top;
+}
+
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-image: url("../img/trees.png");
+	background-size: cover;
+	text-align: center;
+}
+
+header{
+	height: 100px;
+	width: 100%;
+	padding-top: 20px;
+	text-align: center;
+}
+
+h1{
+	font-family: "pacificoregular", sans-serif;
+	background-image: url("../img/ribbon.png");
+	background-size: 400px 80px;
+	background-position: center;
+	font-size: 4rem;
+	color: white;
+	text-shadow: 1px 1px black;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+
+aside{
+	display: inline-block;
+	background-color: rgba(207, 233, 129, 0.85);
+	border: 3px solid #74b522;
+	border-radius: 20px;
+	width: 200px;
+	padding: 20px 10px 20px 20px ;
+	height: 840px;
+	margin-bottom: 10px;
+}
+
+aside img{
+	height: 180px;
+}
+
+ol, ul, li{
+	text-align: left;
+}
+
+main{
+	display: inline-block;
+	background-color: rgb(245, 233, 219, 0.85) ;
+	border: 3px solid rgba(255, 135, 143);
+	border-radius: 20px;
+	width: 78%;
+	padding: 15px;
+	text-align: center;
+}
+
+#sobre{
+	width: 40px;
+}
+
+h2{
+	font-family: "pacificoregular", sans-serif;
+	text-align: center;
+	color: black;
+	text-shadow: 0 0 3px #CC231E;
+}
+
+table, th, tr, td{
+	text-align: center;
+	border: 3px solid black;
+	border-collapse: collapse;
+}
+
+main table{
+	margin: 0 auto;
+}
+
+table img{
+	height: 180px;
+}
+
+footer{
+	background-color: #235E6F;
+	color: white;
+	height: 30px;
+	text-align: center;
+}
+
+footer a:visited, footer a:link{
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}

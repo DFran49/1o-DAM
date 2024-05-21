@@ -1,0 +1,106 @@
+BODY {
+    background-image: url(../img/trees.png);
+}
+
+@media (max-width: 600px) {
+    ASIDE, SECTION {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/pacifico-regular-webfont.woff) format('woff');
+}
+
+#Felicitacion {
+    font-family: myFirstFont;
+    color: white;
+    background-image: url(../img/ribbon.png);
+    background-size: 400px 80px;
+    background-position: center;
+    font-size: 4rem;
+    background-repeat: no-repeat;
+}
+
+.Fuente {
+    font-family: myFirstFont;
+}
+
+HEADER {
+    text-align: center;
+    height: 100px;
+}
+
+#Ribbon {
+    width: 400px;
+    height: 80px;
+}
+
+ASIDE {
+    background-color: #34a660db;
+    border: solid darkgreen;
+    text-align: center;
+    float: left;
+    padding: 10px 50px 20px;
+    width: 17%;
+    border-radius: 3%;
+}
+
+#Lista {
+    list-style: square;
+}
+
+.Patrocinador {
+    width: 170px;
+    height: 170px;
+}
+
+SECTION {
+    background-color: #f5e1e1e0;
+    border: solid rgb(233, 83, 83);
+    float: left;
+    width: 75%;
+    margin-left: 5px;
+    text-align: center;
+    border-radius: 3%;
+}
+
+H2 {
+    text-shadow: 0 0 3px darkred;
+}
+
+TABLE, TR, TD {
+    border: solid black;
+    text-align: center;
+    border-collapse: collapse;
+    margin-left: 20%;
+}
+
+.DestinatariosIMG {
+    height: 150px;
+    width: 130px;
+}
+
+#Sobre {
+    width: 50px;
+    height: 50px;
+}
+
+#VAlign {
+    vertical-align: top;
+}
+
+FOOTER {
+    background-color: rgb(33,91,113);
+    float: left;
+    width: 100%;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}
+
+a.mail:link {color: white;}
+a.mail:visited {color: white;}
+a.mail:hover {color: white;}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<HTML>
+    <HEAD>
+        <TITLE>Pagina10</TITLE>
+        <LINK rel="stylesheet" href="mystyle.css">
+        <SCRIPT async type="text/javascript" src="app.js"></SCRIPT>
+    </HEAD>
+    <BODY>
+        <H1>Mi nombre es:</H1><BR>
+        <P>Francisco Crespo Martín</P><BR><BR>
+        
+        <FORM method="post">
+            <FIELDSET>
+                <INPUT type="text" size="50" maxlength="15">
+            <BR>
+                <INPUT type="text" value="Saludos">
+            <BR>
+                <INPUT type="password">
+            <BR>
+                <INPUT type="date">
+            <BR>
+                <LABEL>Patata</LABEL><INPUT name="RadioPruebaPrimera" type="radio">
+            <BR>
+                <LABEL>Zanahoria</LABEL><INPUT name="RadioPruebaPrimera" type="radio">
+            <BR>
+                <LABEL>Lechuga</LABEL><INPUT name="RadioPruebaPrimera" type="radio">
+            <BR>
+                <LABEL>Pollo</LABEL><INPUT name="RadioPruebaSegunda" type="radio">
+            <BR>
+                <LABEL>Ternera</LABEL><INPUT name="RadioPruebaSegunda" type="radio">
+            <BR>
+                <LABEL>Res</LABEL><INPUT name="RadioPruebaSegunda" type="radio">
+            <BR>
+                <SELECT name="ListaPrueba" size="1">
+                    <OPTION selected>Selecciona una provincia</OPTION>
+                    <OPTION value= "1">Granada </OPTION>
+                    <OPTION value= "2">Jaén</OPTION>
+                    <OPTION value= "3">Cádiz </OPTION>
+                    <OPTION value= "4" disabled>Otros </OPTION>
+                </SELECT>
+            <BR>
+                <TEXTAREA id="TextareaPrueba" cols="25"></TEXTAREA>
+            <BR>
+                <BUTTON type="submit">Enviar</BUTTON>
+                <BUTTON type="reset">Reset</BUTTON>
+                <BUTTON>General</BUTTON>
+                <BUTTON><IMG src="mono.jpg" id="IMGMono"></BUTTON>
+            </FIELDSET>
+        </FORM>
+
+        <BR><BR>
+
+        <FORM method="post" id="FormMailCorto">
+            <FIELDSET>
+                <LABEL for="LibroFav">Libro favorito </LABEL><INPUT type="text" name="LibroFav">
+            <BR>
+                <LABEL for="JuegoFav">Juego favorito </LABEL><INPUT type="text" name="JuegoFav">
+            <BR>
+                <BUTTON onclick="MailCorto()">Enviar</BUTTON>
+            <BR>
+            </FIELDSET>
+        </FORM>
+        <BR>
+
+        <FORM method="post" id="FormAlert">
+            <FIELDSET>
+                <LABEL for="AjedrezFav">Jugada de ajedrez favorita </LABEL><INPUT type="text" name="AjedrezFav">
+                <BR>
+                <LABEL for="DamasFav">Jugada de damas favorita </LABEL><INPUT type="text" name="DamasFav">
+                <BR>
+                <BUTTON type="button" onclick="AlertDatos()">Enviar</BUTTON>
+            </FIELDSET>
+        </FORM>
+        <BR><BR></BR><BR></BR><BR></BR>
+        
+        <H1 class="TitleMail">Hoja de inscripción</H1>
+        <H1 class="TitleMail">en los ciclos formativos de grado superior</H1>
+        <FORM method="post" id="FormMail">
+            <FIELDSET id="FIELDSET1">
+                <LEGEND>DATOS PERSONALES</LEGEND>
+                <TABLE>
+                    <TR>
+                        <TD><LABEL for="Nombre">Nombre:</LABEL></TD>
+                        <TD><LABEL for="Apellidos">Apellidos:</LABEL></TD>
+                        <TD><LABEL for="DNI">DNI:</LABEL></TD>
+                    </TR>
+                    <TR>
+                        <TD><INPUT type="text" size="38" name="Nombre" pattern="[A-z]"></TD>
+                        <TD><INPUT type="text" size="38" name="Apellidos"></TD>
+                        <TD><INPUT type="text" size="25" name="DNI"></TD>
+                    </TR>
+                    <TR>
+                        <TD><LABEL for="Localidad">LOCALIDAD DE NACIMIENTO:</LABEL></TD>
+                        <TD><LABEL for="Provincia">PROVINCIA:</LABEL></TD>
+                        <TD><LABEL for="FechaNac">FECHA DE NACIMIENTO:</LABEL></TD>
+                    </TR>
+                    <TR>
+                        <TD><INPUT type="text" size="25" name="Localidad"></TD>
+                        <TD>
+                            <SELECT name="Provincia">
+                                <OPTION selected disabled>Selecciona una provincia</OPTION>
+                                <OPTION value= "1">Granada</OPTION>
+                                <OPTION value= "2">Jaén</OPTION>
+                                <OPTION value= "3">Cádiz</OPTION>
+                                <OPTION value= "4">Huelva</OPTION>
+                                <OPTION value= "5">Almeria</OPTION>
+                                <OPTION value= "6">Málaga</OPTION>
+                                <OPTION value= "7">Córdoba</OPTION>
+                                <OPTION value= "8">Sevilla</OPTION>
+                            </SELECT>
+                        </TD>
+                        <TD><INPUT type="date" name="FechaNac" size="25"></TD>
+                    </TR>
+                    <TR>
+                        <TD colspan="2"><LABEL for="Direccion">DIRECCIÓN:</LABEL></TD>
+                        <TD><LABEL for="CP">Código Postal:</LABEL></TD>
+                    </TR>
+                    <TR>
+                        <TD colspan="2"><INPUT type="text" size="70" name="Direccion"></TD>
+                        <TD><INPUT type="text" size="25" name="CP"></TD>
+                    </TR>
+                </TABLE>
+            </FIELDSET>
+            <FIELDSET id="FIELDSET2">
+                <LEGEND>FORMA DE ACCESO</LEGEND>
+                    <UL>
+                        <LI><INPUT type="radio" name="Forma" onclick="EnableForma()" value="Direct"><LABEL for="Forma">Direct</LABEL></LI>
+                        <LI>
+                            <UL>
+                                <LI><INPUT type="radio" name="FormaDirect" disabled id="FormaDirect1" onclick="BachLOGSE()" value="Bachillerato LOGSE Modalidad"><LABEL for="FormaDirect">Bachillerato LOGSE Modalidad</LABEL> <INPUT type="text" size="20" name="LOGSE" disabled id="LOGSEInput"></LI>
+                                <LI><INPUT type="radio" name="FormaDirect" disabled id="FormaDirect2" onclick="DeactivateInForma()" value="Bachillerato Experimental"><LABEL for="FormaDirect">Bachillerato Experimental</LABEL></LI>
+                                <LI><INPUT type="radio" name="FormaDirect" disabled id="FormaDirect3" onclick="CouOpt()" value="COU. Opción"><LABEL for="FormaDirect">COU. Opción</LABEL> <INPUT type="text" size="20" name="COU" disabled id="COUInput"></LI>
+                                <LI><INPUT type="radio" name="FormaDirect" disabled id="FormaDirect4" onclick="DeactivateInForma()" value="FP2"><LABEL for="FormaDirect">FP2</LABEL></LI>
+                                <LI><INPUT type="radio" name="FormaDirect" disabled id="FormaDirect5" onclick="Otro()" value="Otros (Especifique)"><LABEL for="FormaDirect">Otros (Especifique)</LABEL> <INPUT type="text" size="20" name="Otros" disabled  id="OtrosInput"></LI>
+                            </UL>
+                        </LI>
+                        <LI><INPUT type="radio" name="Forma" onclick="DisableForma()" value="Prueba libre"><LABEL for="Forma">Prueba libre</LABEL></LI>
+                    </UL>
+            </FIELDSET>
+            <FIELDSET id="FIELDSET3">
+                <LEGEND>DOCUMENTOS ADJUNTADOS</LEGEND>
+                <TABLE>
+                    <TR>
+                        <TD><INPUT type="checkbox" name="FotoDNI"><LABEL for="FotoDNI">Fotocopia DNI</LABEL></TD>
+                        <TD><INPUT type="checkbox" name="CertAcadem"><LABEL for="CertAcadem">Certificado Académico</LABEL></TD>
+                    </TR>
+                    <TR>
+                        <TD><INPUT type="checkbox" name="OtroDoc"><LABEL for="OtroDoc">Otros Documentos (Especifique)</LABEL></TD>
+                        <TD><INPUT type="text" name="OtroDocIn"></TD>
+                    </TR>
+                </TABLE>
+            </FIELDSET>
+            <BR>
+            <BUTTON type="button" onclick="MailLargo()">Enviar solicitud</BUTTON>
+        </FORM>
+    </BODY>
+</HTML>

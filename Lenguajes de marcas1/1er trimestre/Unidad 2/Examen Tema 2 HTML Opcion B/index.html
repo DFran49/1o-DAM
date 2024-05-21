@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<HTML>
+    <HEAD>
+        <TITLE>Pagina05</TITLE>
+        <LINK rel="stylesheet" href="mystyle.css">
+        </HEAD>
+    <BODY>
+        <HEADER>
+            <A id="Arriba"></A>
+            <H1 id="TituloCabecera">1<SUP>a</SUP> Jornada de Robótica HLanz</H1>
+        </HEADER>
+        <NAV>
+            <UL>
+                <LI class="ListaHidden"><H4><A href="">Talleres</A>&nbsp;&nbsp;&nbsp;&nbsp;</H4></LI>
+                <LI class="ListaHidden"><H4><A href="">Contenidos</A>&nbsp;&nbsp;&nbsp;&nbsp;</H4></LI>
+                <LI class="ListaHidden"><H4><A href="">Registro</A>&nbsp;&nbsp;&nbsp;&nbsp;</H4></LI>
+                <LI class="ListaHidden"><H4><A href="">Contacto</A></H4></LI>
+            </UL>
+        </NAV>
+        <MAIN>
+            <SECTION>
+                <P class="TituloMain">Talleres &#x1f551;</P>
+                <TABLE>
+                    <TR>
+                        <TD colspan="3" class="DiasTabla">Jueves</TD>
+                        <TD colspan="3" class="DiasTabla">Viernes</TD>
+                    </TR>
+                    <TR>
+                        <TD class="HorasTabla">16:00</TD>
+                        <TD>Aula A13</TD>
+                        <TD>Emuladores de Robótica</TD>
+                        <TD class="HorasTabla">16:00</TD>
+                        <TD rowspan="2">Aula A13</TD>
+                        <TD>Domótica Básica</TD>
+                    </TR>
+                    <TR>
+                        <TD class="HorasTabla">17:00</TD>
+                        <TD rowspan="2">Aula Informática</TD>
+                        <TD>Robótica básica con Microbit</TD>
+                        <TD class="HorasTabla">17:00</TD>
+                        <TD>Fundamentos de SP32</TD>
+                    </TR>
+                    <TR>
+                        <TD class="HorasTabla">18:00</TD>
+                        <TD>Iniciación a Maqueen</TD>
+                        <TD class="HorasTabla">18:00</TD>
+                        <TD>Aula ATECA</TD>
+                        <TD>Robótica básica con Arduino</TD>
+                    </TR>
+                    <TR>
+                        <TD colspan="6" id="PausaTabla">Pausa para el café</TD>
+                    </TR>
+                    <TR>
+                        <TD class="HorasTabla">19:30</TD>
+                        <TD>Aula ATECA</TD>
+                        <TD>Tutoriales Guiados Iniciación</TD>
+                        <TD class="HorasTabla">19:30</TD>
+                        <TD>Aula Informática</TD>
+                        <TD>Tutoriales Guiados</TD>
+                    </TR>
+                </TABLE>
+            </SECTION>
+            <SECTION>
+                <P class="TituloMain">Contenidos &#x1f916;</P>
+                <OL id="Lista1">
+                    <LI >Talleres Guiados:
+                        <OL id="ListaRoman">
+                            <LI>Iniciación a la robótica</LI>
+                            <LI>Robótica con Arduino</LI>
+                            <LI>Domótica básica</LI>
+                        </OL>
+                    </LI>
+                    <LI>Material disponible:
+                        <UL id="ListaVacio">
+                            <LI>Kits Arduino:
+                                <OL id="Lista0Num">
+                                    <LI>Placa y sensores</LI>
+                                    <LI>Tinkercad</LI>
+                                </OL>
+                            </LI>
+                            <LI>Kits Microbit:
+                                <UL id="ListaRellena">
+                                    <LI>Placa Microbit</LI>
+                                    <LI>Portapilas</LI>
+                                    <LI>Robot Maqueen</LI>
+                                </UL>
+                            </LI>
+                        </UL>
+                    </LI>
+                </OL>
+            </SECTION>
+            <SECTION>
+                <P class="TituloMain">Registro &#x2328;&#xfe0f;</P>
+                <P>Rellena el siguiente formulario para realizar el registro:</P>
+                <FORM method="get" action="resultado.html">
+                    <FIELDSET>
+                        <LABEL for="nombre">Nombre:</LABEL><BR>
+                        <INPUT type="text" name="nombre" id="nombre" required><BR><BR>
+                        <LABEL for="apellidos">Apellidos:</LABEL><BR>
+                        <INPUT type="text" name="apellidos" id="apellidos" required><BR><BR>
+                        <LABEL for="fecha">Fecha de nacimiento:</LABEL><BR>
+                        <INPUT type="date" name="fecha" id="fecha"><BR><BR>
+                        <LABEL for="conocimientos">Conocimientos Previos:</LABEL>
+                        <SELECT name="conocimientos" id="conocimientos">
+                            <OPTGROUP label="Iniciación">
+                                <OPTION value="Ninguno">Ninguno</OPTION>
+                                <OPTION value="Conceptos básicos">Conceptos básicos</OPTION>
+                            </OPTGROUP>
+                            <OPTGROUP label="Medio">
+                                <OPTION value="Manejo básico de Microbit">Manejo básico de Microbit</OPTION>
+                                <OPTION value="Manejo básico de Arduino">Manejo básico de Arduino</OPTION>
+                            </OPTGROUP>
+                        </SELECT><BR>
+                        <LABEL for="">Preferencias:</LABEL>
+                        <INPUT type="radio" name="preferencia" id="t_guiados" value="Talleres Guiados"><LABEL for="t_guiados">Talleres Guiados</LABEL>
+                        <INPUT type="radio" name="preferencia" id="seminarios" value="Seminarios"><LABEL for="seminarios">Seminarios</LABEL>
+                        <INPUT type="radio" name="preferencia" id="ambos" checked value="Ambos"><LABEL for="ambos">Ambos</LABEL>
+                        <BR><BR>
+                        Estoy interesado en:
+                        <BR><BR>
+                        <INPUT type="checkbox" name="interes_1" id="interes_1" value="Arduino"><LABEL for="interes_1"> Arduino</LABEL>
+                        <INPUT type="checkbox" name="interes_2" id="interes_2" value="Microbit"><LABEL for="interes_2"> Microbit</LABEL>
+                        <INPUT type="checkbox" name="interes_3" id="interes_3" value="Maqueen"><LABEL for="interes_3"> Maqueen</LABEL>
+                        <INPUT type="checkbox" name="interes_4" id="interes_4" value="SP32"><LABEL for="interes_4"> SP32</LABEL>
+                        <BR><BR>
+                        <LABEL for="veces">¿Cuántas veces has participado en unas jornadas?:</LABEL><BR>
+                        <INPUT type="number" name="veces" id="veces" min="0" value="0">
+                        <BR><BR>
+                        <LABEL for="c_adicionales">Comentarios adicionales:</LABEL><BR>
+                        <TEXTAREA name="c_adicionales" id="c_adicionales" rows="10" cols="70" placeholder="¿Quieres comentarnos algo?"></TEXTAREA>
+                        <BR><BR>
+                        <DIV id="centerboton">
+                            <INPUT type="submit" value="Submit" id="boton">
+                        </DIV>
+                    </FIELDSET>
+                </FORM>
+                <A href="#Arriba"><IMG src="Recursos/subir-claro.png"></A>
+                <!-- <A href="#top" para ir arriba también -->
+            </SECTION>
+        </MAIN>
+        <ASIDE>
+            <H4>Organizadores:</H4>
+            <DIV><A href="https://www.ieshlanz.es/" target="_blank">Politécnico HLanz</A></DIV>
+            <DIV><A href="https://www.granada.org/" target="_blank">Ayuntamiento de Granada</A></DIV>
+            <DIV><A href="https://www.juntadeandalucia.es/" target="_blank">Junta de Andalucía</A></DIV>
+        </ASIDE>
+        <FOOTER>
+            <DIV>Contacto: <A href="mailto:jornada@ieshlanz.es">jornada@ieshlanz.es</A></DIV>
+            <DIV></DIV>
+        </FOOTER>
+    </BODY>
+</HTML>

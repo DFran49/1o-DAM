@@ -1,0 +1,16 @@
+{"coleccion_musica_cine":
+    {"disco":[
+        {"pelicula":"Star Wars Episodio IV",
+        "compositor":"John Williams",
+        "anio_composición":1997,
+        "formato":{"conversion":"mp3 a 192 Kbps"},
+        "premios":["Original Score"]
+        },
+        {"pelicula":"El señor de los anillos",
+        "compositor":"Howard Shore",
+        "anio_composición":2001,
+        "formato":{"conversion":"mp3 a 256 Kbps"},
+        "premios":["Original Score","Visual Media"]
+        }
+    ]}    
+}

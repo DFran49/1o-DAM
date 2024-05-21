@@ -1,0 +1,2 @@
+https://developer.mozilla.org/es/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools
+https://es.wikihow.com/usar-la-herramienta-Inspeccionar-elemento-en-Mozilla-Firefox

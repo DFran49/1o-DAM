@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="colores.css"?>
+<muestrario>
+    <color>
+        <mezcla>rojo y amarillo</mezcla>
+        <resultado>naranja</resultado>
+    </color>
+    <color>
+        <mezcla>negro y blanco</mezcla>
+        <resultado>gris</resultado>
+    </color>
+    <color>
+        <mezcla>amarillo, azul y blancoo</mezcla>
+        <resultado>verde claro</resultado>
+    </color>
+</muestrario>

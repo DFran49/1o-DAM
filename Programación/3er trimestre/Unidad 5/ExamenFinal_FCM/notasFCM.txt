@@ -1,0 +1,4 @@
+Asignatura: Matemáticas - Nota: SOBRESALIENTE
+Asignatura: Matemáticas - Nota: INSUFICIENTE
+Asignatura: Historia - Nota: INSUFICIENTE
+Asignatura: Historia - Nota: MUY_DEFICIENTE

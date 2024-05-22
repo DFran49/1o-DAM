@@ -1,6 +1,6 @@
 package INSTITUTO_FCM;
 
-public abstract class EmpleadoInsrituto implements Notificable {
+public abstract class EmpleadoInstituto implements Notificable {
     //------------------------------------------------------------------------------------------------------------------
     //ATRIBUTOS
     private String nombre;
@@ -8,7 +8,7 @@ public abstract class EmpleadoInsrituto implements Notificable {
 
     //------------------------------------------------------------------------------------------------------------------
     //CONSTRUCTOR
-    public EmpleadoInsrituto(String n, String i) {
+    public EmpleadoInstituto(String n, String i) {
         this.nombre = n;
         this.instituto = i;
     }

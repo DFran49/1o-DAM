@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>CodeSphere</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/index.css">
+        <script src="app.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header>
+            <img src="img/logo.png" alt="">
+            <h1>CODESPHERE</h1>
+        </header>
+
+        <nav>
+            <div id="search">
+                <input type="text" id="mySearch" onkeyup="findUsers()" placeholder="Search.." title="Type in a category">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </nav>
+        
+        <aside>
+            <div id="noLogeado">
+                <i class="fa-solid fa-house"></i>
+                <button>INICIAR SESIÓN</button>
+            </div>
+
+            <div id="logeado">
+                <i class="fa-solid fa-house"></i>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-gear"></i>
+            </div>
+        </aside>
+        
+        <main>
+            <article id="mensajes">
+                <div id="bandejaEntrada">
+                    <h1>MENSAJES</h1>
+                </div>
+                <div id="chat"></div>
+            </article>
+
+            <section id="contenido">
+                <div class="publi">
+                    <h1 class="perfilPubli"></h1>
+                    <img src="" alt="" class="imgPubli">
+                    <button id="btnComentarios"><i class="fa-solid fa-comment"></i></button>
+                    
+                    <button id="meGusta">
+                        <i class="fa-regular fa-heart"></i>
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                    
+                    <button id="guardado">
+                        <i class="fa-regular fa-bookmark"></i>
+                        <i class="fa-solid fa-bookmark"></i>
+                    </button>
+                </div>
+
+                <div id="comentarios">
+                    <div id="comentario"></div>
+                </div>
+            </section>
+
+            <section id="iniMovil">
+                
+                <div id="usersMovil">
+                    <img src="img/Imagen portfolio.png" alt="" class="userMovil">
+                    <img src="img/Imagen portfolio.png" alt="" class="userMovil">
+                    <img src="img/Imagen portfolio.png" alt="" class="userMovil">
+                    <img src="img/Imagen portfolio.png" alt="" class="userMovil">
+                    <img src="img/Imagen portfolio.png" alt="" class="userMovil">
+                    <img src="img/Imagen portfolio.png" alt="" class="userMovil">
+                    <img src="img/Imagen portfolio.png" alt="" class="userMovil">
+                </div>
+
+                <div class="publiMovil">
+                    <div class="publiMovilUser">
+                        <img src="img/Imagen portfolio.png" alt="">
+                        <p>fcrespo</p>
+                    </div>
+
+                    <div class="publiMovilDesc">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique doloribus sapiente nulla perferendis inventore, 
+                            expedita vitae quis doloremque, adipisci veniam voluptates excepturi illum optio ducimus officia vel, cum eligendi fugiat?</p>
+                    </div>
+
+                    <div class="publiMovilContent">
+                        <img src="img/Imagen portfolio.png" alt=""> <p></p>
+                    </div>
+
+                    <div class="publiInterMovil">
+                        <button id="btnComentarios"><i class="fa-solid fa-comment"></i></button>
+                        
+                        <button id="meGusta">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-heart"></i>
+                        </button>
+                        
+                        <button id="guardado">
+                            <i class="fa-regular fa-bookmark"></i>
+                            <i class="fa-solid fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                
+            </section>
+        </main>
+
+        <footer>
+            <div id="footerPC">
+                <p>copy</p>
+            </div>
+
+            <div id="footerMovil">
+                <i class="fa-solid fa-house"></i>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-comment-dots"></i>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-gear"></i>
+            </div>
+            
+        </footer>
+
+        <script src="https://kit.fontawesome.com/dd263fb98f.js" crossorigin="anonymous"></script>
+    </body>
+</html>

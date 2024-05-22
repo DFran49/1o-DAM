@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (max-width: 414px) {
+    #search, aside, main > #mensajes, main > #contenido, #footerPC {
+        display: none;
+    }
+
+    body {
+        width: 95vw;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        height: 10vh;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    header > img {
+        width: 10vh;
+    }
+
+    main {
+        height: 85vh;
+    }
+
+    main > #iniMovil {
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+    }
+
+    main > #iniMovil > #usersMovil {
+        height: 7vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        overflow: scroll;
+        background-color: lightslategray;
+    }
+
+    main > #iniMovil > #usersMovil > .userMovil {
+        height: 5vh;
+        border-radius: 50%;
+        margin-left: 2vw;
+    }
+
+    main > #iniMovil > .publiMovil {
+        display: flex;
+        flex-direction: column;
+        gap: 1vh;
+    }
+
+    main > #iniMovil > .publiMovil > .publiMovilUser {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    main > #iniMovil > .publiMovil > .publiMovilUser > img {
+        height: 5vh;
+        border-radius: 50%;
+    }
+
+    main > #iniMovil > .publiMovil > .publiMovilDesc > p {
+        height: 13vh;
+        padding: 0.5vh;
+        overflow: scroll;
+        background: gray;
+    }
+
+    main > #iniMovil > .publiMovil > .publiMovilContent {
+        height: 52vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: gray;
+    }
+
+    main > #iniMovil > .publiMovil > .publiMovilContent > img {
+        height: 50vh;
+        width: 90vw;
+    }
+
+    main > #iniMovil > .publiMovil > .publiInterMovil {
+        height: 3.5vh;
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: -1vh;
+   
+        background-color: red;
+    }
+
+    main > #iniMovil > .publiMovil > .publiInterMovil > #btnComentarios {
+        background: none;
+        border: none;
+    }
+
+    footer {
+        height: 5vh;
+        background-color: aqua;
+    }
+}
+
+/*img {
+    width: 10%;
+}
+
+body {
+    display: grid;
+    grid-template-areas: 
+    'header nav nav aside'
+    'main main main main'
+    'main main main main'
+    'main main main main'
+    'main main main main'
+    'main main main main'
+    'main main main main'
+    'main main main main';
+}
+
+header {
+    grid-area: header;
+    height: 10vh;
+    width: 25vw;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+header > img {
+    width: 10vw;
+}
+
+nav {
+    grid-area: nav;
+    height: 5vh;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+aside {
+    grid-area: aside;
+    height: 5vh;
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    grid-area: main;
+    height: 90vh;
+}
+
+main > article {
+    width: 25vw;
+}*/
+
+/*.fa-house  {
+    color: white;
+}
+
+.fa-user {
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+} */
+
+@media only screen and (max-width: 500px) {
+
+}

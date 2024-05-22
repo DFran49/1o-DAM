@@ -1,0 +1,234 @@
+@font-face {
+    font-family: Righteous;
+    src: url(../font/righteous-regular.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+body {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-rows: 200px 50px 450px 1214px 50px;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "aside"
+    "main"
+    "footer";
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(173, 217, 230);
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Righteous;
+    text-align: center;
+    background-color: white;
+}
+
+header div h1 {
+    font-size: 4rem;
+    color: rgb(44, 178, 171);
+    text-shadow: 1px 1px black;
+}
+
+header div h2 {
+    font-size: 3rem;
+    color: rgb(173, 217, 230);
+    text-shadow: 1px 1px black;
+}
+
+header img {
+    width: 200px;
+    border: 1px gray solid;
+    border-radius: 50%;
+}
+
+nav {
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(44, 178, 171);
+}
+
+ul {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:visited {
+    color: greenyellow;
+}
+
+aside {
+    grid-area: aside;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: url(../img/cabecera.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20%;
+}
+
+aside form {
+    background-color: rgb(44, 0, 151);
+    width: 300px;
+    height: 350px;
+    text-align: center;
+    border-radius: 10%;
+}
+
+aside form fieldset {
+    height: 350px;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+aside form fieldset h3 {
+    font-size: 3rem;
+}
+
+aside form fieldset p, aside form fieldset label {
+    color: red;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+aside form fieldset input {
+    width: 270px;
+    align-self: center;
+}
+
+aside h3 {
+    font-family: "Bebas Neue", sans-serif;
+    color: white;
+    text-shadow: 2px 2px 5px rgb(44, 178, 171);
+    letter-spacing: 1mm;
+}
+
+aside > h3 {
+    font-size: 3rem;
+    width: 600px;
+    margin-left: -250px;
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    color: white;
+    text-shadow: 2px 2px 5px rgb(44, 178, 171);
+
+}
+
+main {
+    grid-area: main;
+    background-color: white;
+}
+
+main article:nth-child(1), main article:nth-child(2) {
+    display: flex;
+    font-size: 1.1rem;
+    padding: 10px;
+    text-align: justify;
+}
+
+main article:nth-child(1) img, main article:nth-child(2) img {
+    width: 200px;
+}
+
+main article:nth-child(1) p, main article:nth-child(2) p {
+    align-self: center;
+    padding: 10px;
+}
+
+main article:nth-child(3) {
+    text-align: center;
+}
+
+main article:nth-child(3) > div {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+main article:nth-child(3) img {
+   width: 200px;
+   height: 200px;
+   border-radius: 50%;
+   border: #aaaaaa;
+}
+
+main article:nth-child(3) h3 {
+    width: 100%;
+    height: 50px;
+}
+
+main article:nth-child(4) {
+    text-align: center;
+    background-image: url(../img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20%;
+    text-align: justify;
+}
+
+main article:nth-child(4) p {
+    background-color: rgb(128, 128, 128);
+    color: white;
+    font-size: 1.1rem;
+    padding: 50px;
+}
+
+main article:nth-child(4) form {
+    display: flex;
+    justify-content: center;
+}
+
+main article:nth-child(4) form input {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+main article:nth-child(4) form input:hover {
+    background-color: white;
+    color: black;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+hr {
+    border: solid black 2px;
+    width: 10px;
+}

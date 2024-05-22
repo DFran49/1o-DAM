@@ -1,0 +1,81 @@
+OPCIÓN D
+--------
+
+1a Jornada de Robótica HLanz
+
+    Talleres
+    Contenidos
+    Registro
+    Contacto
+
+Talleres 🕑
+JUEVES 	VIERNES
+16:00 	Aula A13 	Emuladores de Robótica 	16:00 	Aula A13 	Domótica Básica
+17:00 	Aula Informática 	Robótica básica con Microbit 	17:00 	Fundamentos de SP32
+18:00 	Iniciación a Maqueen 	18:00 	Aula ATECA 	Robótica básica con Arduino
+Pausa para el café
+19:30 	Aula ATECA 	Tutoriales Guiados Iniciación 	19:30 	Aula Informática 	Tutoriales Guiados
+
+
+Contenidos 🤖
+
+    Talleres Guiados:
+        Iniciación a la robótica
+        Robótica con Arduino
+        Domótica básica
+
+    Material disponible:
+        Kits Arduino:
+            Placa y sensores
+            Tinkercad
+        Kits Microbit:
+            Placa Microbit
+            Portapilas
+            Robot Maqueen
+
+Registro ⌨️
+Rellena el siguiente formulario para realizar el registro:
+
+Nombre:
+
+
+Apellidos:
+
+
+Fecha de nacimiento:
+
+
+Conocimientos Previos:
+
+
+Preferencias: Talleres Guiados Seminarios Ambos
+
+Estoy interesado en:
+
+Arduino
+
+Microbit
+
+Maqueen
+
+SP32
+
+¿Cuántas veces has participado en unas jornadas?:
+
+
+Comentarios adicionales:
+
+
+Subir
+
+Organizadores:
+
+
+Politécnico HLanz
+
+Ayuntamiento de Granada
+
+Junta de Andalucía
+
+
+Contacto: jornada@ieshlanz.es 

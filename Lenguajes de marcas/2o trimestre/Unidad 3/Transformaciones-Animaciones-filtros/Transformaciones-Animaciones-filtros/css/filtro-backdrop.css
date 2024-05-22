@@ -1,0 +1,32 @@
+.fondo {
+    width: 100%;
+    height: 100vh;
+    background-image: url('imagen-fondo.png'); /* Imagen de fondo detrás de los filtros */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.filtro-backdrop {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.3); /* Color semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+    border: 1px solid black; /* Para visualizar mejor los límites del elemento */
+}
+
+#blur-backdrop { backdrop-filter: blur(5px); }
+#brightness-backdrop { backdrop-filter: brightness(0.2); }
+#contrast-backdrop { backdrop-filter: contrast(200%); }
+#grayscale-backdrop { backdrop-filter: grayscale(60%); }
+#hue-rotate-backdrop { backdrop-filter: hue-rotate(90deg); }
+#invert-backdrop { backdrop-filter: invert(75%); }
+#opacity-backdrop { backdrop-filter: opacity(25%); }
+#saturate-backdrop { backdrop-filter: saturate(30%); }
+#sepia-backdrop { backdrop-filter: sepia(80%); }

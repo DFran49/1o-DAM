@@ -1,0 +1,77 @@
+div {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+#mover {
+    background-color: tomato;
+    animation: mover 2s infinite alternate;
+}
+
+#mover_bezier {
+    background-color: coral;
+    animation: mover 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+    }
+
+
+    #color {
+        background-color: skyblue;
+        animation: colorA 1.5s infinite alternate, colorB 3s infinite alternate;
+        animation-delay: 0s, 1.5s; /* Comienza inmediatamente y luego espera 1.5s para iniciar la segunda animación */
+    }
+    
+    /* #rotar {
+        background-color: violet;
+        animation: rotar 1s ease-in-out infinite alternate;
+        animation-delay: 0.5s; / * Retraso de inicio * /
+        animation-play-state: paused; /* La animación inicia en pausa * /
+    }*/
+    
+    #rotar {
+        background-color: violet;
+    }
+    
+    #rotar:hover {
+        animation: rotar 2s ease-in-out infinite alternate;
+    }
+
+   /* #animar-rotar:checked + #rotar {
+        animation: rotar 2s ease-in-out infinite alternate;
+    }*/
+
+    @keyframes mover {
+        from {transform: translateX(0);}
+        to {transform: translateX(300px);}
+    }
+    
+    @keyframes colorA {
+        0% {background-color: skyblue;}
+        100% {background-color: green;}
+    }
+    
+    @keyframes colorB {
+        0% {background-color: green;}
+        100% {background-color: red;}
+    }
+    
+    @keyframes rotar {
+        0% {transform: rotate(0deg);}
+        25% {transform: rotate(90deg);}
+        50% {transform: rotate(180deg);}
+        75% {transform: rotate(270deg);}
+        100% {transform: rotate(360deg);}
+    }
+
+@keyframes bezier {
+    from {transform: translateX(0);}
+    to {transform: translateX(300px);}
+}
+
+
+
+

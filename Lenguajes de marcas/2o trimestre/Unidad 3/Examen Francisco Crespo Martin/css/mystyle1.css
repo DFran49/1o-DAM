@@ -1,0 +1,209 @@
+BODY {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    background: #ADD8E6;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+BODY A {
+    text-decoration: none;
+}
+
+HEADER, MAIN {
+    background: white;
+}
+
+HEADER {
+    margin-bottom: -1%;
+}
+
+MAIN {
+    margin-top: -1%;
+    padding-bottom: 0.5%;
+    padding-top: 0.5%;
+}
+
+@font-face {
+    font-family: "Fredericka the Great";
+    src: url(../font/FrederickatheGreat-Regular.ttf);
+}
+
+HEADER IMG {
+    width: 10%;
+    display: inline-block;
+    border: #20B2AA solid 10px;
+    padding: 1%;
+    border-radius: 100%;
+    vertical-align: bottom;
+}
+
+HEADER DIV {
+    width: 40%;
+    display: inline-block;
+}
+
+HEADER DIV H1 {
+    font-family: "Fredericka the Great", sans-serif;
+    font-size: 4rem;
+    color: #20B2AA;
+    text-shadow: black 1px 1px;
+}
+
+HEADER DIV H2 {
+    color: #87CEFA;
+    font-size: 2.5rem;
+    text-shadow: black 1px 1px;
+    margin-top: -8%;
+}
+
+NAV {
+    background: #20B2AA;
+}
+
+NAV UL LI {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0.5% 0.5%;
+}
+
+NAV UL LI A {
+    color: white;
+    font-weight: bold;
+}
+
+BODY MAIN SECTION:nth-of-type(1) {
+    background-image: url(../img/cabecera.jpg);
+    background-size: cover;
+    background-position: 10%;
+}
+
+BODY MAIN SECTION:nth-of-type(1) H3 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 4px 4px 4px #20B2AA;
+    width: 32%;
+    display: inline-block;
+}
+
+BODY MAIN SECTION:nth-of-type(1) FORM {
+    background-color: #D3D3D3;
+    width: 15%;
+    display: inline-block;
+    height: 170px;
+    border-radius: 5%;
+    box-shadow: #000 5px 5px 5px;
+}
+
+BODY MAIN SECTION:nth-of-type(1) FORM INPUT {
+    display: block;
+    margin: auto;
+    margin-bottom: 4%;
+    background-color: #F5F5DC;
+}
+
+BODY MAIN SECTION:nth-of-type(1) FORM A {
+    display: block;
+    font-size: 0.7rem;
+    margin-bottom: 5%;
+    margin-top: -4%;
+    color: red;
+}
+
+BODY MAIN SECTION:nth-of-type(1) FORM A:visited {
+    display: block;
+    font-size: 0.7rem;
+    margin-bottom: 5%;
+    margin-top: -4%;
+    color: red;
+}
+
+BODY MAIN SECTION:nth-of-type(1) FORM BUTTON {
+    color: white;
+    background: #20B2AA;
+    border: none;
+    width: 50%;
+    font-weight: bold;
+    padding: 1% 1%;
+}
+
+BODY MAIN SECTION:nth-of-type(2) {
+    background-image: url(../img/fondo.jpg);
+    background-size: cover;
+    background-position: 10%;
+}
+
+BODY MAIN SECTION:nth-of-type(2) DIV {
+    background-color: #808080;
+    color: white;
+    padding: 1%;
+}
+
+BODY MAIN SECTION:nth-of-type(2) BUTTON {
+    color: white;
+    font-weight: bold;
+    background: #000;
+    border: none;
+    width: 10%;
+    padding: 0.5% 0 0.5% 0;
+    margin: 5%;
+}
+
+BODY MAIN SECTION:nth-of-type(2) BUTTON:hover {
+    background-color: white;
+    color: black;
+}
+
+BODY MAIN SECTION:nth-of-type(3) IMG {
+    display: inline-block;
+    width: 15%;
+}
+
+BODY MAIN SECTION:nth-of-type(3) P {
+    width: 60%;
+    display: inline-block;
+    text-align: left;
+    vertical-align: text-bottom;
+    padding: 1%;
+}
+
+BODY MAIN SECTION:nth-of-type(4) FIGURE {
+    display: inline-block;
+    width: 10%;
+    height: 10rem;
+}
+
+BODY MAIN SECTION:nth-of-type(4) FIGURE IMG {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+BODY MAIN SECTION:nth-of-type(4) FIGURE:hover {
+    animation-name: galeria;
+    animation-duration: 4s;
+}
+
+.impares {
+    background-color: black;
+    color: white;
+}
+
+.pares {
+    background-color: #20B2AA; color: white;
+}
+
+FOOTER {
+    background-color: #20B2AA;
+    color: white;
+    padding: 0.2%;
+    margin-top: -0.5%;
+}
+
+@keyframes galeria {
+    from {width: 10%; height: 10rem;}
+    to {width: 20%; height: 20rem;}
+}

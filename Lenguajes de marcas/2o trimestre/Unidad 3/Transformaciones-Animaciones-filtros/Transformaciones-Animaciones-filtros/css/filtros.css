@@ -1,0 +1,25 @@
+.filtro {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    display: inline-block;
+    background-image: url('imagen.png'); /* Reemplaza 'tu-imagen.jpg' con el path de tu imagen */
+    background-size: cover;
+    text-align: center;
+    line-height: 200px;
+    color: white;
+    font-weight: bold;
+}
+
+#none {filter:none;}
+#blur { filter: blur(1px); }
+#brightness { filter: brightness(0.4); }
+#contrast { filter: contrast(200%); }
+#drop-shadow { filter: drop-shadow(16px 16px 20px blue); }
+#grayscale { filter: grayscale(50%); }
+#hue-rotate { filter: hue-rotate(90deg); }
+#invert { filter: invert(75%); }
+#opacity { filter: opacity(25%); }
+#saturate { filter: saturate(30%); }
+#sepia { filter: sepia(60%); }
+#multiple {filter: drop-shadow(10px 10px red) sepia(100%) drop-shadow(-10px -10px blue);}

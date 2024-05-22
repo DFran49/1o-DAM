@@ -1,0 +1,110 @@
+BODY {
+    background-color: #B0D6E2;
+    margin: 0;
+    padding: 0;
+}
+
+NAV {
+    --nav-width: 100%;
+    -webkit-position: -webkit-sticky;
+    -webkit-position: -moz-sticky;
+    position: sticky;
+    top: 0;
+    padding-top: 10px;
+    width: 100%;
+    display: flex;
+} 
+
+MAIN {
+    position: static;
+}
+
+#NavMenu {
+    overflow: hidden;
+    flex-wrap: nowrap;
+    background-color: #FFAB9B;
+    border-top: ridge #DF624B;;
+    border-bottom: ridge #DF624B;;
+    width: 50%;
+}
+
+#NavMenu a {
+    display: inline-block;
+    text-decoration: none;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 2% 2%;
+    font-size: 17px;
+    margin-right: 2px;
+    width: calc(var(--nav-width)/10);
+}
+
+#NavMenu a:hover {
+    background-color: #FFCEC4;
+    color: white;
+    text-shadow: 0px 0px #C03E26, 1px 1px #C03E26, -1px -1px #C03E26;
+    width: 13%;
+    margin-left: -1%;
+    transition-duration: 0.4s;
+}
+
+#NavMenu a#Activo {
+    background-color: #fd7f69;
+    color: white;
+    width: 13%;
+    text-shadow: 0px 0px #C03E26, 1px 1px #C03E26, -1px -1px #C03E26;
+}
+
+#NavUser {
+    overflow: hidden;
+    background-color: #FFAB9B;
+    border-top: ridge #DF624B;
+    border-bottom: ridge #DF624B;
+    width: 50%;
+    vertical-align: middle;
+    text-align: right;
+}
+
+#NavUser a {
+    display: inline-block;
+    text-decoration: none;
+    color: #f2f2f2;
+    text-align: center;
+    vertical-align: bottom;
+    padding: 2% 2%;
+    width: 11%;
+}
+
+#NavUser a:hover {
+    background-color: #FFCEC4;
+    color: white;
+    text-shadow: 0px 0px #C03E26, 1px 1px #C03E26, -1px -1px #C03E26;
+    width: 13%;
+    transition-duration: 0.4s;
+}
+
+#Redes {
+    text-align: center;
+}
+
+#Redes a{
+    display: inline-flex;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    width: 150px;
+}
+
+#Redes a:hover {
+    transition-duration: 0.4s;
+    background-color: #FFCE9B;
+    color: white;
+    font-size: 30px;
+    text-shadow: 0px 0px #C07526, 1px 1px #C07526, -1px -1px #C07526;
+    border: solid #FFBC76 2px;
+    width: 170px;
+    height: 30px;
+    vertical-align: middle;
+}

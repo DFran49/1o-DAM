@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agenda>
+    <entrada category="PRIMERA">
+        <nombre>Rodrigo</nombre>
+        <apellidos>Revelles</apellidos>
+        <telefono1>639237482</telefono1>
+        <telefono2>937283423</telefono2>
+        <direccion>C. Inventada, N70</direccion>
+        <email>rodrigorevelles@gmail.com</email>
+    </entrada>
+    <entrada category="SEGUNDA">
+        <nombre>Margarita</nombre>
+        <apellidos>Cintarina</apellidos>
+        <telefono1>643254326</telefono1>
+        <telefono2>994748390</telefono2>
+        <direccion>Av. Inventada, N64</direccion>
+        <email>marcintarina@gmail.com</email>
+    </entrada>
+    <entrada category="TERCERA">
+        <nombre>Alberto</nombre>
+        <apellidos>Jimenez</apellidos>
+        <telefono1>694827345</telefono1>
+        <telefono2>975634820</telefono2>
+        <direccion>C. Falsa, s/n</direccion>
+        <email>albertjim07@gmail.com</email>
+    </entrada>
+</agenda>

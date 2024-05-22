@@ -1,0 +1,32 @@
+<!-- XML se crea con etiquetas y valores.
+
+Los atributos son necesarios.
+
+Si se va a poner un multivaluado vacío se pone o con las etiquetas vacías o cerrando
+la etiqueta con / al final. -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<alumnos>
+    <alumno "id"="AL123">
+        <nombre>Luis</nombre>
+        <curso>1º</curso>
+        <telefonos>
+            <telefono>456</telefono>
+            <telefono>567</telefono>
+        </telefonos>
+    </alumno>
+    <alumno>
+        <nombre>Ana</nombre>
+        <curso>2º</curso>
+        <telefonos>
+            <telefono>123</telefono>
+        </telefonos>
+    </alumno>
+    <alumno>
+        <nombre>Paco</nombre>
+        <curso>3º</curso>
+        <telefonos></telefonos>
+        <!-- O TAMBIEN -->
+        <telefonos/>
+    </alumno>
+</alumnos>

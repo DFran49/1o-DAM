@@ -1,0 +1,50 @@
+DIV{
+    border: 5px ridge gray;
+    border-radius: 10px;
+}
+
+.Mar-15px{
+    margin-left: -15px;
+}
+
+#Mar-55px{
+    margin-left: -55px;
+}
+
+.ListRomanLow{
+    list-style-type: lower-roman;
+}
+
+.ListAlphaLow{
+    list-style-type: lower-alpha;
+}
+
+.ListDecimal{
+    list-style-type: decimal;
+}
+
+.ListCircle{
+    list-style-type: circle;
+}
+
+.ListDisk{
+    list-style-type: disc;
+}
+
+.ListSquare{
+    list-style-type: square;
+}
+
+.ListNone{
+    list-style-type: none;
+}
+
+.ListNone-80px{
+    list-style-type: none;
+    margin-left: -80px;
+}
+
+.ListNone-15px{
+    list-style-type: none;
+    margin-left: -15px;
+}

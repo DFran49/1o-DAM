@@ -1,0 +1,124 @@
+BODY {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+IMG {width: 5%;}
+
+HEADER IMG {
+    width: 10%;
+}
+
+HEADER H1 {
+    color: orange;
+}
+
+HEADER H3 {
+    color: darkcyan;
+}
+
+NAV {
+    background: #000;
+    color: white;
+    text-align: left;
+}
+
+NAV HR {
+    color: white;
+    width: 120%;
+    padding-top: 1%;
+    
+}
+
+NAV DIV {
+    width: 98%;
+    padding: 10px;
+}
+
+NAV LI {
+    list-style: none;
+    display: inline-block;
+    margin-right: 1%;
+}
+
+NAV A {
+    color: white;
+    text-decoration: none;
+    padding: 10%;
+}
+
+NAV A:hover {
+    color: black;
+    background-color: #fff;
+    padding: 10%;
+}
+
+MAIN SECTION:first-child IMG:nth-of-type(1) {
+    width: 100%;
+}
+
+MAIN SECTION:nth-child(2) P {
+    font-weight: bolder;
+}
+
+MAIN SECTION:nth-child(2) IMG {
+    aspect-ratio: 1;
+    width: 50%;
+    height: auto;
+    margin-right: 4%;
+    border-radius: 100% 100% 100% 100%;
+}
+
+MAIN SECTION:nth-child(2) FIGCAPTION {
+    color: cyan;
+}
+
+MAIN SECTION:nth-child(2) FIGURE {
+    width: 20%;
+    display: inline-block;
+}
+
+MAIN SECTION:nth-child(3) {
+    background-image: url(Material/img/fondo.jpg);
+
+}
+
+MAIN SECTION:nth-child(3) P {
+    padding: 2%;
+    background-color: gray;
+    color: white;
+}
+
+MAIN SECTION:nth-child(3) BUTTON {
+    margin: 2%;
+    background-color: #000;
+    color: white;
+    width: 10%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    border: none;
+}
+
+MAIN SECTION:nth-child(4) DIV {
+    width: 35%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: justify;
+}
+
+MAIN SECTION:nth-child(4) IMG {
+    width: 15%;
+    margin-top: 2%;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+FOOTER {
+    background-color: black;
+    color: white;
+}
+
+FOOTER P {
+    padding: 1%;
+}

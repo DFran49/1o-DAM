@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+}
+
+article {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+IMG {
+    width: 10%;
+}
+
+#sobre-mi IMG {
+    width: 30%;
+}
+
+MAIN #hard-skills IMG {
+    width: 50%;
+}
+
+MAIN #contacto #social-networks IMG {
+    width: 30%;
+}
+
+I {
+    width: 10%;
+    font-size: 4em;
+}
+
+A:visited {
+    color: limegreen;
+}
+
+.CabeceraHardskills {
+    padding: 5%;
+}
+
+ul {
+    list-style-type: none;
+    display: inline-block;
+}
+
+ul li {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 8px 15px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+}
+
+article ul li {
+    background-color: #555;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#footer-izq, #footer-centro, #footer-dcha {
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    padding: 0 20px;
+}
+
+#footer-centro {
+    text-align: center;
+}
+
+#footer-izq p {
+    font-size: 14px;
+}
+
+#footer-centro ul {
+    list-style-type: none;
+}
+
+#footer-centro li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#footer-dcha p {
+    font-size: 14px;
+}

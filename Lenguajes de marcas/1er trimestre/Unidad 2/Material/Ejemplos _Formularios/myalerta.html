@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alerta</title>
+</head>
+
+<body>
+    <form id="formulario">
+        <p>
+            Nombre alerta:
+            <input type="text" id="nombre">
+        </p>
+        <p>
+            Valor de la alerta
+            <textarea id="valor">Escribe aquí</textarea>
+        </p>
+    <!--    
+        <button type="submit" onclick="myalert()"> Enviar</button>   
+    --> 
+    <button type="button" onclick="this.disabled=true; this.textContent='Enviado'; myalert(); "> Enviar</button>   
+</form>
+<br/>
+<div id="status"></div> <!-- Este elemento mostrará el estado del envío -->
+
+<script>
+    
+    function myalert() {
+        var nombre_alerta=document.getElementById("nombre").value;
+        alert(nombre_alerta);
+        var valor_alerta=document.getElementById("valor").value;
+        alert(valor_alerta);
+
+        //document.write('Enviado');
+        
+        // Actualiza el estado de la página
+        document.getElementById("status").innerText = 'La alerta ha sido enviada';
+
+    }
+    
+</script>
+   
+</body>
+
+</html>

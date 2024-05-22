@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicios con Formularios</title>
+</head>
+
+<body>
+    <h1 style="text-align:center">HOJA DE INSCRIPCIÓN</h1>
+    <h1 style="text-align:center">EN LOS CICLOS FORMATIVOS DE GRADO SUPERIOR</h1>
+    <form name="formulario1" method="get" action="respuestas.html">
+        <fieldset style="background-color: #BBBBBB">
+            <legend style="border: 1px solid black; background-color: white">Datos Personales</legend>
+            <table>
+                <tr>
+                    <td><label for="nombre">Nombre:</label></td>
+                    <td><input type="text" name="nombre" /></td>
+                    <td><label for="apellidos">Apellidos:</label></td>
+                    <td><input type="text" name="apellidos" /></td>
+                </tr>
+                <tr>
+                    <td><label for="curso">Curso:</label></td>
+                    <td><input type="text" name="curso" /></td>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="text" name="email" /></td>
+                </tr>
+                <tr>
+                    
+                    <td><label for="relacion">Relación:</label></td>
+                    <td><input type="text" name="relacion" /></td>
+                    <td><label for="usuario">Usuario:</label></td>
+                    <td><input type="text" name="usuario" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label for="correoe">Correo electrónico:</label></td>
+                    <td colspan="2"><input type="text" name="correoe" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label for="tecnologia">Tecnología:</label></td>
+                    <!--td colspan="2">
+                        <select name="tecnologia">
+                            <option id="tecnologia1" value="tecnologia1">tecnologia 1</option>
+                            <option id="tecnologia2" value="tecnologia2">tecnologia 2</option>
+                            <option id="tecnologia3" value="tecnologia3">tecnologia 3</option>
+                            <option id="tecnologia4" value="tecnologia4">tecnologia 4</option>
+                        </select>
+                    </td-->
+                    <td colspan="2">
+                        <input type="checkbox" name="tecnologia1" value="tecnologia1">tecnologia 1</option>
+                        <input type="checkbox" name="tecnologia2" value="tecnologia2">tecnologia 2</option>
+                        <input type="checkbox" name="tecnologia3" value="tecnologia3">tecnologia 3</option>
+                        <input type="checkbox" name="tecnologia4" value="tecnologia4">tecnologia 4</option>
+                    </td>
+                </tr>
+            </table>
+
+        </fieldset>
+        <p>
+            <input type="submit" value="Enviar Solicitud" />
+        </p>
+    </form>
+
+</body>
+
+</html>

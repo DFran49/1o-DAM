@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Noto Serif';
+    src: 
+        local("Noto Serif"),
+        url(../fonts/NotoSerif-Italic-VariableFont_wdth\,wght.ttf) format("truetype"),
+        url(../fonts/NotoSerif-VariableFont_wdth\,wght.ttf) format("truetype");
+}
+
+#TituloComic {
+    font-family: 'Honk', system-ui;
+}
+
+#NavMenu a {
+    font-family: 'Poor Story', system-ui;
+    font-size: 1rem;
+    width: 4em;
+}
+
+#AboutFont {
+    font-family: 'Poor Story', system-ui;
+}
+
+.FuenteTexto {
+    font-family: 'Noto Serif';
+}

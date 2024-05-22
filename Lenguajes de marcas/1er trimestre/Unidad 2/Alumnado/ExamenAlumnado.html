@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<HTML>
+			<!--
+Estructura: 
+	Información de título e icono de la página, una cabecera, una barra de navegación 	lateral, la página principal, y un pie de página.
+
+	TITULO DE LA PÁGINA
+	El título de la página será: “Solicitud Formal de Regalos - Feliz Navidad!!”. 
+	Además tendrá un icono con un sobre.
+	Deberá tener como palabras clave para utilizar en los buscadores: Navidad, Carta, 	Santa Claus, Reyes Magos, Regalos.
+	Se usará la hoja de estilo Navidad.css, que nos ha proporcionado el equipo de diseño.
+
+-->
+	<HEAD>
+		<TITLE>Solicitud Formal de Regalos - Feliz Navidad!!</TITLE>
+		<LINK rel="stylesheet" href="css/Navidad.css">
+		<meta name="keywords" content="Navidad, Carta, Santa Claus, Reyes Magos, Regalos">
+		<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+	</HEAD>
+	<BODY>
+<!--
+	BARRA SUPERIOR
+	Incluirá una imagen con motivo navideño y el texto “Feliz Navidad”.
+	COLOR FONDO: White
+	ALTO: 100px
+	FUENTE: PacificoRegular (cargada de archivo) BLANCO.
+
+-->
+		<HEADER>
+			<H1 id="Felicitacion" class="Fuente">Feliz Navidad</H1>
+		</HEADER>
+
+
+		<NAV></NAV>
+
+
+		<!--
+	BARRA LATERAL
+	Incluirá lista y patrocinadores (imágenes con enlaces)
+	COLOR FONDO: #34A65F
+
+-->
+
+<!-- 
+Texto:  ¿Santa o Papá Noel?  
+Enlace: Página de Papá Noel de Wikipedia, concretamente la sección “La transformación: De ‘San Nicolás’ a Santa Claus y Papá Noel” 
+Dónde: Se abre en un página nueva
+
+Texto:  Roscón de Reyes
+Enlace: A una página hecha por nosotros donde se muestre un vídeo incrustado de YouTube, donde se vea cómo se hace un Roscón de Reyes. El vídeo debe empezar a reproducirse nada más abrirse la página. 
+Dónde: Se abre en la misma página.
+
+Texto:  Formas de Celebrar
+Enlace: https://www.notimerica.com/sociedad/noticia-celebra-dia-navidad-distintas-religiones-20141224090411.html
+Dónde: Se abre en un página nueva
+Tras este enlace se debe indicar en una lista no ordenada con las religiones que se mencionan en el artículo, Hinduísmo, Islamismo, Judaísmo y Cristianismo. La marca de cada ítem debe ser un cuadrado.
+
+-->
+
+<!--
+Un encabezado de nivel 4 con el texto: “Patrocinadores:”.
+A continuación, imágenes de los 3 patrocinadores (Amazon, AliExpress y Game, en ese 	orden), de 180  	píxeles de ancho, con enlaces a sus webs. Estos enlaces deben abrirse 	en 	ventanas nuevas. 
+IMÁGENES: 
+-->
+
+
+		<ASIDE>
+			<P>Saber más sobre:</P>
+
+			</P><A href="https://es.wikipedia.org/wiki/Pap%C3%A1_Noel#La_transformaci%C3%B3n:_de_San_Nicol%C3%A1s_a_Santa_Claus_y_Pap%C3%A1_Noel" target="_blank">¿Santa o Papá Noel?</A></P>
+			</P><A href="Roscon.html" target="_self">Roscón de Reyes</A></P>
+			</P><A href="https://www.notimerica.com/sociedad/noticia-celebra-dia-navidad-distintas-religiones-20141224090411.html" target="_blank">Formas de Celebrar</A></P>
+			<UL id="Lista">
+				<LI>Hinduísmo</LI>
+				<LI>Islamismo</LI>
+				<LI>Judaísmo</LI>
+				<LI>Cristianismo</LI>
+			</UL>
+			<H4>Patrocinadores:</H4>
+			<BR>
+			<IMG src="img/amazon.png" class="Patrocinador">
+			<BR><BR>
+			<IMG src="img/aliexpress.png" class="Patrocinador">
+			<BR><BR>
+			<IMG src="img/game.png" class="Patrocinador">
+		</ASIDE>
+
+		<!--PRINCIPAL
+	COLOR FONDO: #f5e1e1
+
+	Título de nivel 2.
+	FUENTE: PacificoRegular
+	COLOR: NEGRO
+	SOMBRA: 3px rojo oscuro.
+-->
+
+
+
+
+<!--
+Una tabla para seleccionar los receptores de la carta, tal como se ve en la imagen:
+
+	Las imágenes tienen una altura de 150 píxeles. Por cuestiones de accesibilidad, cada imagen tendrá como  nombre alternativo, el nombre del destinatario.
+	Al pinchar sobre el nombre del destinatario o su imagen, se debe seleccionar su botón. 
+	Por defecto está seleccionado el botón Otro.
+	El nombre del campo es destinatario, y los valores que debe tomar, son los nombres de los distintos destinatarios.
+	Tras la tabla hay un separador horizontal y comienza el formulario.
+-->
+
+<!--
+CAMPO[nombre] :  Campo de texto. Debe tener como texto sugerido “¿Cómo te 	llamas?” y al poner el cursor sobre él debe indicar “Pon aquí tu nombre”. Es obligatorio.
+
+	CAMPO[email]:  Campo de tipo email. Debe tener como texto sugerido “tu@email.com” 	y al poner el cursor sobre él debe indicar “Indica un e-mail válido". 
+	Debe validarse y seguir un patrón válido para correos electrónicos. 
+	La parte del nombre serán números y letras, guiones, puntos y subrayados, pero no 	puede empezar por guión, punto o subrayado. A continuación se indicará la @ y el 	nombre del servidor que puede contener letras, números, puntos y guiones, seguido de 	la 	extensión que será obligatoria y de entre 2 y 6 letras (no números ni caracteres especiales). 	Tenga en cuenta que no pueden aparecer dos puntos seguidos. 
+	Es obligatorio.
+-->
+
+<!-- 	
+	CAMPO[edad]:  Numérico, acepta valores entre 0 y 17. Obligatorio.
+-->
+
+<!-- 
+	CAMPO[ciudad]:  Campo de texto. Obligatorio.
+
+	CAMPO[pais]:  Lista desplegable con las opciones:  España, Argentina, Bolivia, Chile, 	Colombia, Otro… Por defecto aparece la última opción. Obligatorio.
+-->
+
+<!--
+
+	CAMPO[comportamiento]: Como se muestra en la imagen.
+
+Los valores a enviar para cada mensaje son:  bien, regular-mal, regular, regular-bien, mal.
+	Por defecto está marcado regular. Obligatorio.
+-->                   
+
+<!--
+
+	CAMPO[regaloX]:  Casillas de selección múltiple. Cada campo tiene el nombre regalo1, 	regalo2, regalo3, regalo4 con valores 1, 2, 3, 4, y etiquetas Libro, Juego de Mesa, 	Videoconsola y Cheque Regalo. Cuando se pulse en la etiqueta, se selecciona  la casilla.  Son 	opcionales.
+-->   
+
+<!--
+	CAMPO[comentarios]: Es un area de texto, donde podemos escribir más detalles de la 	carta. 
+	Es opcional y tiene unas dimensiones de 80x10. Debe tener activo el corrector gramatical.
+-->
+
+<!--
+	Botones de enviar y limpiar de la carta.
+-->
+
+
+<!--
+    
+Tras los botones de enviar y limpiar, se indica el mensaje  “¿Cuándo recibiré respuesta a esta 	carta?” 
+y al pulsarlo se indicará “Probablemente nunca” tachado, seguido de  “Feliz Navidad!!!”. 
+-->
+
+
+		<SECTION>
+			<H2 class="Fuente">Solicitud Formal de Regalos</H2><BR>
+			<FORM  method="post" id="FormMail">
+				<TABLE>
+					<TR>
+						<TD colspan="5">Querido... :</TD>
+					</TR>
+					<TR>
+						<TD>Santa Claus</TD>
+						<TD colspan="3">Los Reyes Magos</TD>
+						<TD>Otros</TD>
+					</TR>
+					<TR>
+						<TD><LABEL for="SantaClaus"><IMG src="img/Claus.jpg" class="DestinatariosIMG" alt="Santa Claus"></LABEL></TD>
+						<TD colspan="3"><LABEL for="Melchor"><IMG src="img/Melchor.png" class="DestinatariosIMG" alt="Melchor"></LABEL>
+						<LABEL for="Gaspar"><IMG src="img/Gaspar.png" class="DestinatariosIMG" alt="Gaspar"></LABEL>
+						<LABEL for="Baltasar"><IMG src="img/Baltasar.png" class="DestinatariosIMG" alt="Baltasar"></LABEL></TD>
+						<TD><LABEL for="Otros"><IMG src="img/Otro.png" class="DestinatariosIMG" alt="Otro"></LABEL></TD>
+					</TR>
+					<TR>
+						<TD><INPUT type="radio" name="destinatario" id="SantaClaus" value="Santa Claus"></TD>
+						<TD><INPUT type="radio" name="destinatario" id="Melchor" value="Melchor"></TD>
+						<TD><INPUT type="radio" name="destinatario" id="Gaspar" value="Gaspar"></TD>
+						<TD><INPUT type="radio" name="destinatario" id="Baltasar" value="Baltasar"></TD>
+						<TD><INPUT type="radio" name="destinatario" id="Otros" value="Otros"></TD>
+					</TR>
+					<TR>
+						<TD><LABEL for="SantaClaus">Santa Claus</LABEL></TD>
+						<TD><LABEL for="Melchor">Melchor</LABEL></TD>
+						<TD><LABEL for="Gaspar">Gaspar</LABEL></TD>
+						<TD><LABEL for="Baltasar">Baltasar</LABEL></TD>
+						<TD><LABEL for="Otros">Otros</LABEL></TD>
+					</TR>
+				</TABLE>
+				<BR>
+				<HR>
+				<P>Mi nombre es <INPUT type="text" placeholder="¿Cómo te llamas?" required alt="Pon aquí tu nombre"> y mi e-mail es <INPUT type="text" placeholder="tu@mail.com"></P>
+				<H5>¡Ya tengo <INPUT type="number" required> años!</H5>
+				<P>Vivo en la ciudad de <INPUT type="text" required> que está en <SELECT>
+					<OPTION value="España">España</OPTION>
+					<OPTION value="Argentina">Argentina</OPTION>
+					<OPTION value="Bolivia">Bolivia</OPTION>
+					<OPTION value="Chile">Chile</OPTION>
+					<OPTION value="Colombia">Colombia</OPTION>
+					<OPTION value="Otro">Otro...</OPTION>
+				</SELECT></P>
+				<P>Este año me he portado: <SELECT>
+					<OPTGROUP label="Bien">
+						<OPTION value="Bien">¡He sido todo un angelito!</OPTION>
+					</OPTGROUP>
+					<OPTGROUP label="Regular">
+						<OPTION value="Regular mal">No hay pruebas de nada</OPTION>
+						<OPTION value="Regulat" selected>Regular</OPTION>
+						<OPTION value="Regular bien">Bueno, digamos que no he sido precisamente un angelito</OPTION>
+					</OPTGROUP>
+					<OPTGROUP label="Mal">
+						<OPTION value="Mal">He tenido  un par de encontronazos con la ley</OPTION>
+					</OPTGROUP>
+					
+				</SELECT></P>
+				<P>Algunas cosas que me gustaría recibir para Navidad este año son:</P>
+				<P><INPUT type="checkbox" value="Libro">Libro <INPUT type="checkbox" value="Juego de mesa">Juego de Mesa <INPUT type="checkbox" value="Videoconsola">Videoconsola <INPUT type="checkbox" value="Cheque regalo">Cheque regalo</P>
+				<P>P.D. Casi me olvido de agregar estos comentarios.</P>
+				<TEXTAREA rows="10" cols="80" spellcheck="true"></TEXTAREA><BR>
+				<P id="VAlign"><IMG src="img/envelope.png" id="Sobre"> o <BUTTON>Empezar de nuevo</BUTTON></P>
+			</FORM>
+			<DETAILS>
+				<SUMMARY>
+					¿Cuándo recibiré respuesta a esta carta?
+				</SUMMARY>
+				<s>Probablemente nunca</s>Feliz Navidad!!!
+			</DETAILS>
+		</SECTION>
+      
+                       
+		<!-- PIE
+	 COLOR: #
+     Un pie de página con nuestra información de contacto.  “correo@empresa.com | Gracias por 	la visita”. La dirección de email es un enlace que abre un programa de correo, para enviar un 	mensaje a esa dirección con el asunto “Problemas con mi carta”. 	
+-->
+
+
+		<FOOTER>Contacto: <A href="mailto:correo@empresa.com" id="mail">correo@empresa.com</A> | Gracias por la visita </FOOTER>
+	</BODY>
+</HTML>
+

@@ -1,0 +1,69 @@
+MAIN TABLE {
+    text-align: center;
+    border: 2px black solid;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+MAIN TABLE TR TD {
+    border: 2px black solid;
+}
+
+MAIN TABLE TR:first-child > TD:first-child {
+    background-color: white;
+}
+
+MAIN TABLE TR > TD:first-child {
+    background-color: orange;
+}
+
+MAIN TABLE TR:nth-child(5) TD:last-child {
+    background-color: rgb(87, 87, 187);
+    color: white;
+}
+
+MAIN TABLE TR:first-child {
+    font-weight: bold;
+    font-size: 15px;
+
+}
+
+MAIN TABLE TR:first-child TD::first-letter {
+    font-size: 30px;
+}
+
+MAIN TABLE TR TD {
+    text-transform: capitalize;
+}
+
+MAIN TABLE TR:nth-child(7) TD:last-of-type {
+    background-color: green;
+}
+
+MAIN TABLE TR:nth-child(2) TD:nth-child(2) {
+    background-color: red;
+}
+
+MAIN TABLE TR:nth-child(7) TD:last-of-type:hover {
+    font-size: 30px;
+}
+
+MAIN FORM INPUT:first-child {
+    background-color: pink;
+}
+
+MAIN FORM INPUT:first-child:focus {
+    background-color: yellow;
+}
+
+MAIN A {
+    text-decoration: none;
+}
+
+MAIN A:visited {
+    color: red;
+}
+
+MAIN A:link {
+    color: green;
+}

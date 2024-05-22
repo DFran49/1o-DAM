@@ -1,0 +1,66 @@
+DIV {
+    width: 100%;
+}
+
+#Fondo-background {
+    background: content-box radial-gradient(pink, lightgray);
+}
+
+#Fondo-color {
+    background-color: coral;
+    background-attachment: fixed;
+}
+
+#Fondo-imagen {
+    background-image: url("./72876-seamless-retro-floral-pattern-background.jpg");
+    background-attachment: scroll;
+}
+
+#Fuente-variant {
+    font-variant: small-caps;
+}
+
+#Familia {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#Font-Tamaño {
+    font-size: 2rem;
+}
+
+#Peso {
+    font-weight: 700;
+}
+
+#Ajuste-size {
+    font-size-adjust: 0.34;
+}
+
+#Style-Fuente {
+    font-style: italic;
+}
+
+#Estilo-Lista {
+    list-style: square inside;
+}
+
+#Estilo-Lista LI {
+    border: 2px solid black;
+}
+
+#Tipo-Lista {
+    list-style-type: lower-roman;
+    list-style-position: outside;
+}
+
+#Tipo-Lista LI {
+    border: 2px solid black;
+}
+
+#Imagen-Lista {
+    list-style-image: url(marcador.png);
+}
+
+#Imagen-Lista LI {
+    margin: 4%;
+}

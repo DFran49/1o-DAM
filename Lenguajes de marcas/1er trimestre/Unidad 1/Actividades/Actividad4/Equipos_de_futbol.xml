@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<equipos>
+    <equipo>
+        <nombre>Raimon Jr. Hight</nombre>
+        <ciudad>Inazuma</ciudad>
+        <entrenador></entrenador>
+        <jugador>
+            <nombre>Arion Sherwind</nombre>
+            <posicion>Mediocentro</posicion>
+            <nacionalidad>Japonés</nacionalidad>
+        </jugador>
+        <jugador>
+            <nombre>Riccardo Di Rigo</nombre>
+            <posicion>Mediocentro</posicion>
+            <nacionalidad>Japonés</nacionalidad>
+        </jugador>
+    </equipo>
+    <equipo>
+        <nombre>Instituto Alpino</nombre>
+        <ciudad>Hokkaidō</ciudad>
+        <entrenador></entrenador>
+        <jugador>
+            <nombre>Aiden Froste</nombre>
+            <posicion>Delantero</posicion>
+            <nacionalidad>Japonés</nacionalidad>
+        </jugador>
+        <jugador>
+            <nombre>Shawn Froste</nombre>
+            <posicion>Defensa</posicion>
+            <nacionalidad>Japonés</nacionalidad>
+        </jugador>
+    </equipo>
+</equipos>

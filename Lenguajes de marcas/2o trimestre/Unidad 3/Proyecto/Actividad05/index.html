@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Portfolio de Francisco Crespo Martín</title>
+    <LINK rel="stylesheet" href="mystyle.css">
+    <SCRIPT src="app.js"></SCRIPT>
+  </head>
+  <body>
+    <nav>
+      <a href="#sobre-mi">Sobre mi</a>
+      <a href="#">Github</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <header id="cabecera">
+      <h1>Portfolio Profesional</h1>
+      <hr>
+      <h2>Francisco Crespo Mart&iacute;n</h2>
+      <br>
+      <blockquote cite="https://canalpositivo.com/noticias/ampliar.php/Id_contenido/2692/">"La mejor manera de predecir el futuro es implementarlo."</blockquote>
+    </header>
+    <main>
+      <section id="personal">
+        <!-- article es un elemento independiente dentro de la página. Si lo cambiamos de lugar
+             en la web sigue teniendo sentido dentro de la visión global de la web -->
+        <article id="sobre-mi">
+          <header>
+              <h2>Sobre mi</h2>
+              <img src="Imagen portfolio.png" alt="Sobre mi" id="MiFoto">
+          </header>
+          <!-- Incluye una descripción personal -->
+          <p></p>
+        </article>
+        <article id="formacion">
+          <header>
+            <h2>Formaci&oacute;n</h2>
+            <img src="nand.png" alt="nand">
+          </header>
+          <P>Mi formaci&oacute;n consiste de las siguientes titulaciones:</P>
+          <UL>
+            <LI>T&eacute;cnico inform&aacute;tico que adquir&iacute; en el centro <A href="https://iespm.es/">IES Padre Manj&oacute;n</A></LI>
+            <LI>Desarrollador de aplicaciones multiplataforma que adquir&iacute; en el centro <A href="https://www.ieshlanz.es/">IES Hermenegildo Lanz</A></LI>
+          </UL>
+          <!-- Incluye contenido relacionado con tu formación -->
+        </article>
+      </section>
+      <section id="skills">
+        <article id="hard-skills">
+          <header>
+            <h2>Hard-Skills</h2>
+            <img src="umlClass.png" alt="hard skills">
+          </header>
+          <ul>
+            <li class="CabeceraHardskills">Frontend</li>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+              <BR>
+            <li class="CabeceraHardskills">Backend</li>
+              <ul>
+                <li>Java</li>
+                <li>Python</li>
+                <li>JavaScript</li>
+              </ul>
+          </ul>
+        </article>
+        <article id="soft-skills">
+          <header>
+            <h2>Soft-Skills</h2>
+            <img src="reloj.png" alt="Soft skills">
+          </header>
+          <ul>
+            <li>Resoluci&oacute;n de problemas</li>
+            <li>Trabajo en equipo</li>
+            <li>Adaptabilidad</li>
+            <li>Pensamiento cr&iacute;tico</li>
+            <li>Aprendizaje cont&iacute;nuo</li>
+          </ul>
+        </article>
+      </section>
+      <section id="contacto">
+        <article id="email">
+          <header>
+            <h2>Env&iacute;ame un mensaje</h2>
+            <img src="carta.png" alt="Carta">
+            <form method="post" id="FormMail">
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre" required>
+
+              <label for="apellidos">Apellidos:</label>
+              <input type="text" id="apellidos" name="apellidos" required>
+
+              <label for="email">Correo Electr&oacute;nico:</label>
+              <input type="email" id="email" name="email" required>
+
+              <label for="mensaje">Mensaje:</label>
+              <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+              <BUTTON type="button" onclick="Mail()">Enviar solicitud</BUTTON>
+            </form>
+          </header>
+          <!-- Añade un formulario de contacto para enviar via email que sea funcional -->
+        </article>
+        <article id="social-networks">
+          <header>
+            <h2>Contacto</h2>
+            <img src="rrss.png" alt="Redes Sociales">
+            <BR>
+            <A href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></A>
+            <A href="https://www.facebook.com/?locale=es_ES"><i class="fa-brands fa-facebook"></i></A>
+            <A href="https://twitter.com/"><i class="fa-brands fa-x-twitter"></i></A>
+            <A href="https://www.reddit.com/?rdt=43971"><i class="fa-brands fa-reddit"></i></A>
+          </header>
+          <!-- Añade datos de contacto y enlaces a rrss -->
+        </article>
+      </section>
+    </main>
+    <footer>
+      <section id="footer-izq">
+        <p>&copy; 2024 Mi Portfolio. Todos los derechos reservados.</p>
+        <p>Algunos iconos diseñados por <a href="https://fontawesome.com/" title="FontAwesome">FontAwesome</a> de www.fontawesome.com</p>
+        <!-- Añade contenido libremente, apropiado y semanticamente correcto -->
+      </section>
+      <section id="footer-centro">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <!-- Agrega más enlaces según la estructura de tu portfolio -->
+        </ul>
+        <!-- Añade contenido libremente, apropiado y semanticamente correcto -->
+      </section>
+      <section id="footer-dcha">
+          <p><a href="#politica-de-privacidad">Pol&iacute;tica de Privacidad</a></p>
+          <p><a href="#terminos-de-servicio">T&eacute;rminos de Servicio</a></p>
+        <!-- Añade contenido libremente, apropiado y semanticamente correcto -->
+      </section>
+    </footer>
+    <script src="https://kit.fontawesome.com/dd263fb98f.js" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Enviar cuestionario por email</title>
+</head>
+
+<body>
+    <form id="formulario">
+        Nombre:<input type="text" name="nombre"><br/>
+        Apellidos:<input type="text" name="apellidos"><br/>
+        ¿Cuántos hermanos tienes?: <br/>
+            <input type="radio" name="hermanos" value="1">1<br/>
+            <input type="radio" name="hermanos" value="2">2<br/>
+            <input type="radio" name="hermanos" value="3">3<br/>
+        <input type="checkbox" name="hobbie1" value="Leer"> Leer<br/>
+        <input type="checkbox" name="hobbie2" value="Escuchar música"> Música<br/>
+        Navegador:
+        <select name="navegador">
+            <option value="Chrome">Chrome</option>
+            <option value="Firefox">Firefox</option>
+        </select>
+        <br/>
+
+        <button type="button" name="enviar" onclick="enviar_mail();">Enviar</button><br/>   
+    </form>
+    <script>
+        function enviar_mail() {
+            var formulario=document.getElementById("formulario");
+            var nombre=formulario.nombre.value;
+            var apellidos=formulario.apellidos.value;
+            var hermanos=formulario.hermanos.value;
+            var hobbie1=formulario.hobbie1.value;
+            var hobbie2=formulario.hobbie2.value;
+            var navegador=formulario.navegador.value
+
+            var cadena= 'Nombre: '+nombre+'%0D%0A';
+            cadena=cadena+'Apellidos: '+apellidos+'%0D%0A';
+            cadena=cadena+'Hermanos: '+hermanos+'%0D%0A';
+
+            if(formulario.hobbie1.checked==true)
+                cadena=cadena+'Hobbie: '+ hobbie1+'%0D%0A';
+
+            if(formulario.hobbie2.checked==true)
+                cadena=cadena+'Hobbie: '+ hobbie2+'%0D%0A';
+
+            cadena=cadena+'Navegador: '+navegador+'%0D%0A';
+
+            window.location.href="mailto:llombardero@ieshlanz.es?subject=Envio de Cuestionario&body="+cadena;
+            
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+[{
+"agenda": {
+    "persona":[
+        {
+            "nombre": "Rodrigo",
+            "apellidos": "Revelles",
+            "telefono1": "639237482",
+            "telefono2": "937283423",
+            "direccion": "C. Inventada, N70",
+            "email": "rodrigorevelles@gmail.com"
+        },
+        {
+            "nombre": "Margarita",
+            "apellidos": "Cintarina",
+            "telefono1": "643254326",
+            "telefono2": "994748390",
+            "direccion": "Av. Inventada, N64",
+            "email": "marcintarina@gmail.com"
+        },
+        {
+            "nombre": "Alberto",
+            "apellidos": "Jimenez",
+            "telefono1": "694827345",
+            "telefono2": "975634820",
+            "direccion": "C. Falsa, s/n",
+            "email": "albertjim07@gmail.com"
+        }
+    ]
+}
+}]

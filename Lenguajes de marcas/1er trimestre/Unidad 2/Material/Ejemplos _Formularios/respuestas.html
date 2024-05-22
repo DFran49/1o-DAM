@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Formularios con GET</title>
+    <meta charset="utf-8">
+    <style>
+        table,
+        th,
+        td,
+        tr {
+            border: 1px solid black;
+        }
+
+        th {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p><b>PARÁMETROS: </b> <br /> <span id="ejRef"></span></p>
+
+    <table>
+        <tr>
+            <th colspan="2">PARÁMETROS RECIBIDOS</th>
+        </tr>
+        <tr>
+            <td>
+                Nombre
+            </td>
+            <td>
+                <span id="nombre"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Apellidos
+            </td>
+            <td>
+                <span id="apellidos"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Curso
+            </td>
+            <td>
+                <span id="curso"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tecnologia
+            </td>
+            <td>
+                <span id="tecnologia1"></span>
+                <br />
+                <span id="tecnologia2"></span>
+                <br />
+                <span id="tecnologia3"></span>
+                <br />
+                <span id="tecnologia4"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Usuario
+            </td>
+            <td>
+                <span id="usuario"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                relacion
+            </td>
+            <td>
+                <span id="relacion"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email
+            </td>
+            <td>
+                <span id="email"></span>
+            </td>
+        </tr>
+        <td>
+            correoe
+        </td>
+        <td>
+            <span id="correoe"></span>
+        </td>
+    </table>
+
+    <script>
+
+        const urlParams = new URLSearchParams(window.location.search);
+        /*  
+            window.location.search devuelve la parte de la consulta de la URL de la página,
+              es decir, todo lo que está después del signo de interrogación '?' en la URL.
+            URLSearchParams es una clase web API que facilita el trabajo con la cadena de consulta de la URL.
+              Puede parsear y manipular los parámetros de la consulta con facilidad.
+        */
+
+        var myElement = document.getElementById("ejRef");
+        myElement.innerHTML = urlParams;
+        /* 
+            document.getElementById("ejRef") selecciona el elemento HTML que tiene un atributo id igual a "ejRef".
+             Así podemos manipular este elemento directamente con JavaScript.
+          innerHTML es una propiedad que permite obtener o asignar el contenido HTML del elemento seleccionado.
+           Al asignar urlParams directamente al innerHTML del elemento, en realidad estamos asignando la 
+           representación de texto del objeto URLSearchParams.
+        */
+
+        myElement = document.getElementById("nombre");
+        myElement.innerHTML = urlParams.get("nombre");
+        /*
+            Al combinar estas dos líneas de código, el contenido HTML del elemento con id="nombre" se reemplaza con el
+             valor del parámetro "nombre" que se encuentra en la URL. Si no hay ningún parámetro "nombre" en la URL o
+             si está vacío, urlParams.get("nombre") devolverá null.
+        */
+
+        myElement = document.getElementById("apellidos");
+        myElement.innerHTML = urlParams.get("apellidos");
+
+        myElement = document.getElementById("curso");
+        myElement.innerHTML = urlParams.get("curso");
+
+        myElement = document.getElementById("tecnologia1");
+        myElement.innerHTML = urlParams.get("tecnologia1");
+
+        myElement = document.getElementById("tecnologia2");
+        myElement.innerHTML = urlParams.get("tecnologia2");
+
+        myElement = document.getElementById("tecnologia3");
+        myElement.innerHTML = urlParams.get("tecnologia3");
+
+        myElement = document.getElementById("tecnologia4");
+        myElement.innerHTML = urlParams.get("tecnologia4");
+
+        myElement = document.getElementById("email");
+        myElement.innerHTML = urlParams.get("email");
+
+        myElement = document.getElementById("relacion");
+        myElement.innerHTML = urlParams.get("relacion");
+
+        myElement = document.getElementById("usuario");
+        myElement.innerHTML = urlParams.get("usuario");
+
+        myElement = document.getElementById("correoe");
+        myElement.innerHTML = urlParams.get("correoe");
+
+
+    </script>
+
+
+</body>
+
+</html>

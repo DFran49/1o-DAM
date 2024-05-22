@@ -1,0 +1,71 @@
+En JOSN los números individuales y los booleanos se ponen sin comillas.
+
+Si vas a crear un array con una sola entrada, se crea solo un objeto (Se inicia sin [).
+
+JSON se crea con 'clave:valor'.
+
+Si se pone un campo multivaluado vacío se tienen que poner los [] igualmente.
+
+NO SE PUEDEN PONER COMENTARIOS
+
+No hay atributos, para ponerlos desde xml a json se pone como un campo más
+
+Si en una entrada de un array tienes un campo con un array, en las demás entradas
+de esas se pone array (Ejemplo, los teléfonos abajo).
+
+JSON:
+
+
+{"alumnos":[
+        {
+            "id":"AL123",
+            "nombre": "Luis",
+            "curso": "1º",
+            "telefonos": [456,567]
+        },
+        {
+            "nombre": "Ana",
+            "curso": "2º",
+            "telefonos": [123]
+        },
+        {
+            "nombre": "Paco",
+            "curso": "3º",
+            "telefonos": []
+        }
+    ]
+}
+
+
+
+XML se crea con etiquetas y valores.
+
+Si se va a poner un multivaluado vacío se pone o con las etiquetas vacías o cerrando
+la etiqueta con / al final.
+
+XML:
+<?xml version="1.0" encoding="UTF-8"?>
+<alumnos>
+    <alumno>
+        <nombre "id"="AL123">Luis</nombre>
+        <curso>1º</curso>
+        <telefonos>
+            <telefono>456</telefono>
+            <telefono>567</telefono>
+        </telefonos>
+    </alumno>
+    <alumno>
+        <nombre>Ana</nombre>
+        <curso>2º</curso>
+        <telefonos>
+            <telefono>123</telefono>
+        </telefonos>
+    </alumno>
+    <alumno>
+        <nombre>Paco</nombre>
+        <curso>3º</curso>
+        <telefonos></telefonos>
+        O TAMBIEN
+        <telefonos/>
+    </alumno>
+</alumnos>

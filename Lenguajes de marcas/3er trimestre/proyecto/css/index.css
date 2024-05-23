@@ -5,7 +5,8 @@
 }
 
 /* MOVIL */
-#search, aside, main > #mensajes, main > #contenido, #footerPC {
+#search, aside, main > #mensajes, main > #contenido, #footerPC, #buscMovil, 
+#msgMovil, #chatMovil, #perfilMovil, #ajustesMovil, .fa-solid.fa-heart, .fa-solid.fa-bookmark {
     display: none;
 }
 
@@ -91,23 +92,166 @@ main > #iniMovil > .publiMovil > .publiMovilContent > img {
     height: 50vh;
     width: 90vw;
 }
+main > #iniMovil > .publiMovil > #comentariosMovil {
+    display: none;
+    position: absolute;
+    top: 24vh;
+    width: 95vw;
+    background-color: brown;
+    height: 66vh;
+}
 
 main > #iniMovil > .publiMovil > .publiInterMovil {
     height: 3.5vh;
-    width: 30%;
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin-top: -1vh;
-                                                                                                                      
-    background-color: red;
 }
 
-main > #iniMovil > .publiMovil > .publiInterMovil > #btnComentarios {
-    background: none;
-    border: none;
+main > #iniMovil > .publiMovil > .publiInterMovil  > i {
+    font-size: 1.5rem;
 }
 
+main > #buscMovil, main > #msgMovil {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 84vh;
+}
+
+main > #msgMovil > #chatsMovil, main > #buscMovil > #buscUsersMovil {
+    border: solid black 1px;
+    height: 75vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    padding: 2vh;
+    overflow: scroll;
+}
+
+main > #msgMovil > #chatsMovil > p, main > #buscMovil > #buscUsersMovil > p {
+    border-bottom: solid black 1px;
+    height: 4vh;
+    vertical-align: middle;
+}
+
+main > #chatMovil {
+    height: 84vh;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+main > #chatMovil > #topChatMovil {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 2vw;
+}
+
+main > #chatMovil > #topChatMovil > i {
+    font-size: 1.8rem;
+}
+
+main > #chatMovil > #contenedorMensajesMovil {
+    width: 100%;
+    height: 77vh;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    border: solid black 1px;
+    padding: 0vh 1vh 1vh 1vh;
+}
+
+main > #chatMovil > #contenedorMensajesMovil > .mensajeUserMovil, main > #chatMovil > #contenedorMensajesMovil > .mensajeAmigoMovil  {
+    border-radius: 10%;
+    margin: 1vh 0 0 0;
+    padding: 1vh;
+}
+
+main > #chatMovil > #contenedorMensajesMovil > .mensajeUserMovil {
+    align-self: flex-end;
+    background-color: aqua;
+}
+
+main > #chatMovil > #contenedorMensajesMovil > .mensajeAmigoMovil {
+    align-self: flex-start;
+    background-color: aqua;
+}
+
+main > #perfilMovil {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2vh;
+}
+
+main > #perfilMovil > #topPerfilMovil {
+    display: flex;
+}
+
+main > #perfilMovil > #topPerfilMovil > img {
+    width: 25vw;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 5px, rgba(0, 0, 0, 0.6) -2px -2px 5px, rgba(0, 0, 0, 0.6) -2px 2px 5px, rgba(0, 0, 0, 0.6) 2px -2px 5px;
+}
+
+main > #perfilMovil > #topPerfilMovil > #datosPerfilMovil {
+    width: 70vw;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+main > #perfilMovil > #topPerfilMovil > #datosPerfilMovil > h1 {
+    width: 100%;
+    text-align: center;
+}
+
+main > #perfilMovil > #topPerfilMovil > #datosPerfilMovil > #contAmigosMovil, main > #perfilMovil > #topPerfilMovil > #datosPerfilMovil > #contPubliMovil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main > #perfilMovil > #bioMovil {
+    height: 17vh;
+    padding: 1vh;
+    overflow: scroll;
+}
+
+main > #perfilMovil > #publicacionesMovil {
+    height: 53.2vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1vh;
+    padding: 1vh;
+    border: solid black 1px;
+    overflow: scroll;
+}
+
+main > #perfilMovil > #publicacionesMovil > .publiPerfilMovil {
+    width: 27vw;
+    height: 11vh;
+    border-radius: 5%;
+    box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 5px, rgba(0, 0, 0, 0.6) -2px -2px 5px, rgba(0, 0, 0, 0.6) -2px 2px 5px, rgba(0, 0, 0, 0.6) 2px -2px 5px;
+}
+
+main > #perfilMovil > #publicacionesMovil > .publiPerfilMovil.relleno {
+    box-shadow: none;
+}
+
+main > #perfilMovil > #publicacionesMovil > .publiPerfilMovil > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+}
+
+/* FOOTER */
 footer > #footerMovil {
     height: 6vh;
     display: flex;

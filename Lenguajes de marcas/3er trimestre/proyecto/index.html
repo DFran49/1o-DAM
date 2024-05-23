@@ -4,7 +4,7 @@
         <title>CodeSphere</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/index.css">
-        <script src="js/mostrar-esconder.js"></script>
+        <script src="js/functions.js"></script>
         <meta charset="UTF-8">
     </head>
     <body>
@@ -90,38 +90,106 @@
                         <img src="img/Imagen portfolio.png" alt=""> <p></p>
                     </div>
 
+                    <div id="comentariosMovil">
+                        comment
+                    </div>
+
                     <div class="publiInterMovil">
-                        <button id="btnComentarios"><i class="fa-solid fa-comment"></i></button>
+                        <i class="fa-solid fa-comment" onclick="comentarios()"></i>
                         
-                        <button id="meGusta">
-                            <i class="fa-regular fa-heart"></i>
-                            <i class="fa-solid fa-heart"></i>
-                        </button>
-                        
-                        <button id="guardado">
-                            <i class="fa-regular fa-bookmark"></i>
-                            <i class="fa-solid fa-bookmark"></i>
-                        </button>
+                        <i class="fa-regular fa-heart" id="cora-no-visto" onclick="cambiarMeGusta()"></i>
+                        <i class="fa-solid fa-heart" id="cora-visto" onclick="cambiarMeGusta()"></i>
+
+                        <i class="fa-regular fa-bookmark" id="marca-no-visto" onclick="cambiarGuardado()"></i>
+                        <i class="fa-solid fa-bookmark" id="marca-visto" onclick="cambiarGuardado()"></i>
                     </div>
                 </div>
-                
             </section>
 
             <section id="buscMovil">
-                <div>Busqueda</div>
+                <h1>BUSCAR</h1>
+                <div id="searchMovil">
+                    <input type="text" id="mySearch" onkeyup="findUsers(event)" onsubmit="saludo()" placeholder="Search.." title="Type in a category">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div id="buscUsersMovil">
+                    <p onclick="saludo()">chat 1</p>
+                </div>
             </section>
 
             <section id="msgMovil">
-                <div>Mensaje</div>
-                <button onclick="chat()">abrir chat</button>
+                <h1>MENSAJES</h1>
+                <div id="searchMovil">
+                    <input type="text" id="mySearch" onkeyup="findUsers(event)" onsubmit="saludo()" placeholder="Search.." title="Type in a category">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div id="chatsMovil">
+                    <p onclick="chat()">chat 1</p>
+                    <p>chat 2</p>
+                </div>
             </section>
 
             <section id="chatMovil">
-                <div>Chat</div>
+                <div id="topChatMovil">
+                    <i class="fa-solid fa-arrow-left" onclick="mensajes()"></i>
+                    <h1>JuanAlberto</h1>
+                </div>
+                <div id="contenedorMensajesMovil">
+                    <div class="mensajeUserMovil">Ola</div>
+                    <div class="mensajeAmigoMovil">Ola tu</div>
+                    <div class="mensajeUserMovil">Ola</div>
+                    <div class="mensajeAmigoMovil">Ola tu</div>
+                    <div class="mensajeUserMovil">Ola</div>
+                    <div class="mensajeAmigoMovil">Ola tu</div>
+                    <div class="mensajeUserMovil">Ola</div>
+                    <div class="mensajeAmigoMovil">Ola tu</div>
+                    <div class="mensajeUserMovil">Ola</div>
+                    <div class="mensajeAmigoMovil">Ola tu</div>
+                    <div class="mensajeUserMovil">Ola</div>
+                    <div class="mensajeAmigoMovil">Ola tu</div>
+                    <div class="mensajeUserMovil">Ola</div>
+                    <div class="mensajeAmigoMovil">Ola tu</div>
+                    <div class="mensajeUserMovil">Ola</div>
+                    <div class="mensajeAmigoMovil">Ola tu</div>
+                    <div class="mensajeUserMovil">Ola</div>
+                    <div class="mensajeAmigoMovil">Ola tu</div>
+                </div>
             </section>
 
             <section id="perfilMovil">
-                <div>Perfil</div>
+                <div id="topPerfilMovil">
+                    <img src="img/Imagen portfolio.png" alt="">
+                    <div id="datosPerfilMovil">
+                        <h1>JuanAlberto</h1>
+                        <div id="contAmigosMovil">
+                            <h4>Amigos</h4>
+                            <p>0</p>
+                        </div>
+                        <div id="contPubliMovil">
+                            <h4>Publicaciones</h4>
+                            <p>0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="bioMovil">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, odit aut. Ipsum aperiam, aspernatur sit 
+                        vitae dolorum magnam tempora commodi odio? Ad, iste aspernatur! Non tempore similique pariatur. Expedita, dignissimos.</p>
+                </div>
+
+                <div id="publicacionesMovil">
+                    <div class="publiPerfilMovil"><img src="img/Imagen portfolio.png" alt=""></div>
+                    <div class="publiPerfilMovil"><img src="img/Imagen portfolio.png" alt=""></div>
+                    <div class="publiPerfilMovil"><img src="img/Imagen portfolio.png" alt=""></div>
+                    <div class="publiPerfilMovil"><img src="img/Imagen portfolio.png" alt=""></div>
+                    <div class="publiPerfilMovil"><img src="img/Imagen portfolio.png" alt=""></div>
+                    <div class="publiPerfilMovil"><img src="img/Imagen portfolio.png" alt=""></div>
+                    <div class="publiPerfilMovil relleno"></div>
+                    <div class="publiPerfilMovil relleno"></div>
+                    <div class="publiPerfilMovil relleno"></div>
+                    <div class="publiPerfilMovil relleno"></div>
+                    
+                </div>
             </section>
 
             <section id="ajustesMovil">

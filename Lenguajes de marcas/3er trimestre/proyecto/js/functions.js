@@ -51,3 +51,45 @@ function ajustes() {
     document.getElementById('perfilMovil').style.display = 'none';
     document.getElementById('ajustesMovil').style.display = 'flex';
 }
+
+function comentarios() {
+    if (document.getElementById('comentariosMovil').style.display == 'none') {
+        document.getElementById('comentariosMovil').style.display = 'none';
+        alert('b');
+    }
+    
+    alert(document.getElementById('comentariosMovil').textContent);
+}
+
+function cambiarMeGusta() {
+    if (document.getElementById('cora-no-visto').style.display == 'none') {
+        document.getElementById('cora-no-visto').style.display = 'inline';
+        document.getElementById('cora-visto').style.display = 'none';
+    } else {
+        document.getElementById('cora-no-visto').style.display = 'none';
+        document.getElementById('cora-visto').style.display = 'inline';
+    }   
+}
+
+function cambiarGuardado() {
+    if (document.getElementById('marca-no-visto').style.display == 'none') {
+        document.getElementById('marca-no-visto').style.display = 'inline';
+        document.getElementById('marca-visto').style.display = 'none';
+    } else {
+        document.getElementById('marca-no-visto').style.display = 'none';
+        document.getElementById('marca-visto').style.display = 'inline';
+    }   
+}
+
+function findUsers(event) {
+    if (event.keyCode == 13) {
+        alert('enter')
+    } else {
+        alert(event.keyCode);
+    }
+    
+}
+
+function saludo() {
+    alert();
+}

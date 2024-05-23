@@ -4,7 +4,7 @@
         <title>CodeSphere</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/index.css">
-        <script src="app.js"></script>
+        <script src="js/mostrar-esconder.js"></script>
         <meta charset="UTF-8">
     </head>
     <body>
@@ -106,6 +106,27 @@
                 </div>
                 
             </section>
+
+            <section id="buscMovil">
+                <div>Busqueda</div>
+            </section>
+
+            <section id="msgMovil">
+                <div>Mensaje</div>
+                <button onclick="chat()">abrir chat</button>
+            </section>
+
+            <section id="chatMovil">
+                <div>Chat</div>
+            </section>
+
+            <section id="perfilMovil">
+                <div>Perfil</div>
+            </section>
+
+            <section id="ajustesMovil">
+                <div>ajustes</div>
+            </section>
         </main>
 
         <footer>
@@ -114,11 +135,11 @@
             </div>
 
             <div id="footerMovil">
-                <i class="fa-solid fa-house"></i>
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <i class="fa-solid fa-comment-dots"></i>
-                <i class="fa-solid fa-user"></i>
-                <i class="fa-solid fa-gear"></i>
+                <i class="fa-solid fa-house" onclick="inicio()"></i>
+                <i class="fa-solid fa-magnifying-glass" onclick="buscar()"></i>
+                <i class="fa-solid fa-comment-dots" onclick="mensajes()"></i>
+                <i class="fa-solid fa-user" onclick="perfil()"></i>
+                <i class="fa-solid fa-gear" onclick="ajustes()"></i>
             </div>
             
         </footer>

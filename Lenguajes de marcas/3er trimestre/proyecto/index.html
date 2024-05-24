@@ -34,37 +34,18 @@
         </aside>
         
         <main>
-            <article id="mensajes">
-                <div id="bandejaEntrada">
-                    <h1>MENSAJES</h1>
-                </div>
-                <div id="chat"></div>
+            <article id="logIn">
+                <form action="" method="post" id="formLogIn">
+                    <legend>INICIAR SESIÓN</legend>
+                    <label for="username">Nombre de usuario</label>
+                    <input type="text" id="username" required>
+                    <label for="passwd">Contraseña</label>
+                    <input type="password" id="passwd" required>
+                    <button type="button" onclick="logIn()">Iniciar</button>
+                </form>
             </article>
 
             <section id="contenido">
-                <div class="publi">
-                    <h1 class="perfilPubli"></h1>
-                    <img src="" alt="" class="imgPubli">
-                    <button id="btnComentarios"><i class="fa-solid fa-comment"></i></button>
-                    
-                    <button id="meGusta">
-                        <i class="fa-regular fa-heart"></i>
-                        <i class="fa-solid fa-heart"></i>
-                    </button>
-                    
-                    <button id="guardado">
-                        <i class="fa-regular fa-bookmark"></i>
-                        <i class="fa-solid fa-bookmark"></i>
-                    </button>
-                </div>
-
-                <div id="comentarios">
-                    <div id="comentario"></div>
-                </div>
-            </section>
-
-            <section id="iniMovil">
-                
                 <div id="usersMovil">
                     <img src="img/Imagen portfolio.png" alt="" class="userMovil">
                     <img src="img/Imagen portfolio.png" alt="" class="userMovil">
@@ -75,18 +56,18 @@
                     <img src="img/Imagen portfolio.png" alt="" class="userMovil">
                 </div>
 
-                <div class="publiMovil">
-                    <div class="publiMovilUser">
+                <div class="publicacion">
+                    <div class="publicacionUser">
                         <img src="img/Imagen portfolio.png" alt="">
                         <p>fcrespo</p>
                     </div>
 
-                    <div class="publiMovilDesc">
+                    <div class="publicacionDesc">
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique doloribus sapiente nulla perferendis inventore, 
                             expedita vitae quis doloremque, adipisci veniam voluptates excepturi illum optio ducimus officia vel, cum eligendi fugiat?</p>
                     </div>
 
-                    <div class="publiMovilContent">
+                    <div class="publicacionContent">
                         <img src="img/Imagen portfolio.png" alt=""> <p></p>
                     </div>
 
@@ -106,94 +87,121 @@
                 </div>
             </section>
 
-            <section id="buscMovil">
+            <section id="buscar">
                 <h1>BUSCAR</h1>
-                <div id="searchMovil">
-                    <input type="text" id="mySearch" onkeyup="findUsers(event)" onsubmit="saludo()" placeholder="Search.." title="Type in a category">
+                <form id="busquedaMovil" action="#">
+                    <input type="text" id="buscarPerfiles" onkeyup="hola(event)" placeholder="Search.." title="Type in a category">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-                <div id="buscUsersMovil">
-                    <p onclick="saludo()">chat 1</p>
+                </form>
+                <div id="listaUsers">
+                    <p onclick="saludo()" id="resultadoUsuario">chat 1</p>
+                    <p onclick="saludo()" id="resultadoUsuario">chat 2</p>
                 </div>
             </section>
 
-            <section id="msgMovil">
+            <section id="mensajes">
                 <h1>MENSAJES</h1>
-                <div id="searchMovil">
-                    <input type="text" id="mySearch" onkeyup="findUsers(event)" onsubmit="saludo()" placeholder="Search.." title="Type in a category">
+                <div id="busquedaMovil">
+                    <input type="text" id="buscarChats" onkeyup="buscarChats(event)" placeholder="Search.." title="Type in a category">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <div id="chatsMovil">
+                <div id="bandejaEntrada">
                     <p onclick="chat()">chat 1</p>
                     <p>chat 2</p>
                 </div>
             </section>
 
-            <section id="chatMovil">
-                <div id="topChatMovil">
-                    <i class="fa-solid fa-arrow-left" onclick="mensajes()"></i>
+            <section id="chat">
+                <div id="topChat">
+                    <i class="fa-solid fa-arrow-left" onclick="volverMensajes()"></i>
                     <h1>JuanAlberto</h1>
                 </div>
-                <div id="contenedorMensajesMovil">
-                    <div class="mensajeUserMovil">Ola</div>
-                    <div class="mensajeAmigoMovil">Ola tu</div>
-                    <div class="mensajeUserMovil">Ola</div>
-                    <div class="mensajeAmigoMovil">Ola tu</div>
-                    <div class="mensajeUserMovil">Ola</div>
-                    <div class="mensajeAmigoMovil">Ola tu</div>
-                    <div class="mensajeUserMovil">Ola</div>
-                    <div class="mensajeAmigoMovil">Ola tu</div>
-                    <div class="mensajeUserMovil">Ola</div>
-                    <div class="mensajeAmigoMovil">Ola tu</div>
-                    <div class="mensajeUserMovil">Ola</div>
-                    <div class="mensajeAmigoMovil">Ola tu</div>
-                    <div class="mensajeUserMovil">Ola</div>
-                    <div class="mensajeAmigoMovil">Ola tu</div>
-                    <div class="mensajeUserMovil">Ola</div>
-                    <div class="mensajeAmigoMovil">Ola tu</div>
-                    <div class="mensajeUserMovil">Ola</div>
-                    <div class="mensajeAmigoMovil">Ola tu</div>
+                <div id="contenedorMensajes">
+                    <div class="mensajeUser">Ola</div>
+                    <div class="mensajeAmigo">Ola tu</div>
+                    <div class="mensajeUser">Ola</div>
+                    <div class="mensajeAmigo">Ola tu</div>
+                    <div class="mensajeUser">Ola</div>
+                    <div class="mensajeAmigo">Ola tu</div>
+                    <div class="mensajeUser">Ola</div>
+                    <div class="mensajeAmigo">Ola tu</div>
+                    <div class="mensajeUser">Ola</div>
+                    <div class="mensajeAmigo">Ola tu</div>
+                    <div class="mensajeUser">Ola</div>
+                    <div class="mensajeAmigo">Ola tu</div>
+                    <div class="mensajeUser">Ola</div>
+                    <div class="mensajeAmigo">Ola tu</div>
+                    <div class="mensajeUser">Ola</div>
+                    <div class="mensajeAmigo">Ola tu</div>
+                    <div class="mensajeUser">Ola</div>
+                    <div class="mensajeAmigo">Ola tu</div>
                 </div>
             </section>
 
-            <section id="perfilMovil">
-                <div id="topPerfilMovil">
+            <section id="perfil">
+                <div id="topPerfil">
                     <img src="img/Imagen portfolio.png" alt="">
-                    <div id="datosPerfilMovil">
+                    <div id="datosPerfil">
                         <h1>JuanAlberto</h1>
-                        <div id="contAmigosMovil">
+                        <div id="contAmigos">
                             <h4>Amigos</h4>
                             <p>0</p>
                         </div>
-                        <div id="contPubliMovil">
+                        <div id="contPublicaciones">
                             <h4>Publicaciones</h4>
                             <p>0</p>
                         </div>
                     </div>
                 </div>
 
-                <div id="bioMovil">
+                <div id="bio">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, odit aut. Ipsum aperiam, aspernatur sit 
                         vitae dolorum magnam tempora commodi odio? Ad, iste aspernatur! Non tempore similique pariatur. Expedita, dignissimos.</p>
                 </div>
 
-                <div id="publicacionesMovil">
-                    <div class="publiPerfilMovil"><img src="img/Imagen portfolio.png" alt=""></div>
-                    <div class="publiPerfilMovil"><img src="img/Imagen portfolio.png" alt=""></div>
-                    <div class="publiPerfilMovil"><img src="img/Imagen portfolio.png" alt=""></div>
-                    <div class="publiPerfilMovil"><img src="img/Imagen portfolio.png" alt=""></div>
-                    <div class="publiPerfilMovil"><img src="img/Imagen portfolio.png" alt=""></div>
-                    <div class="publiPerfilMovil"><img src="img/Imagen portfolio.png" alt=""></div>
-                    <div class="publiPerfilMovil relleno"></div>
-                    <div class="publiPerfilMovil relleno"></div>
-                    <div class="publiPerfilMovil relleno"></div>
-                    <div class="publiPerfilMovil relleno"></div>
-                    
+                <div id="publicaciones">
+                    <div class="publicacionPerfil"><img src="img/Imagen portfolio.png" alt=""></div>
+                    <div class="publicacionPerfil"><img src="img/Imagen portfolio.png" alt=""></div>
+                    <div class="publicacionPerfil"><img src="img/Imagen portfolio.png" alt=""></div>
+                    <div class="publicacionPerfil"><img src="img/Imagen portfolio.png" alt=""></div>
+                    <div class="publicacionPerfil"><img src="img/Imagen portfolio.png" alt=""></div>
+                    <div class="publicacionPerfil"><img src="img/Imagen portfolio.png" alt=""></div>
+                    <div class="publicacionPerfil relleno"></div>
+                    <div class="publicacionPerfil relleno"></div>
+                    <div class="publicacionPerfil relleno"></div>
+                    <div class="publicacionPerfil relleno"></div>
                 </div>
             </section>
 
-            <section id="ajustesMovil">
-                <div>ajustes</div>
+            <section id="ajustes">
+                <div id="topAjustes">
+                    <i class="fa-solid fa-gear"></i>
+                    <h1>Ajustes</h1>
+                </div>
+                <div id="contenedorAjustes">
+                    <p onclick="cambiarNombre()">Cambiar nombre</p>
+                    <p onclick="borrarPubli()">Borrar publicaciones</p>
+                    <p onclick="borrarAmigos()">Eliminar a todos los amigos</p>
+                    <p onclick="borrarCuenta()">Borrar cuenta</p>
+                    <p onclick="logOut()">Cerrar sesión</p>
+                </div>
+                <section id="cambiarNombre">
+                    <i class="fa-solid fa-arrow-left" onclick="volverAjustes()"></i>
+                    <h1>CAMBIAR NOMBRE</h1>
+                    A
+                </section>
+                <div id="borrarPublicaciones">
+                    <i class="fa-solid fa-arrow-left" onclick="volverAjustes()"></i>
+                    <h1 id="asd">BORRAR PUBLICACIONES</h1>
+                </div>
+                <div id="borrarAmigos">
+                    <i class="fa-solid fa-arrow-left" onclick="volverAjustes()"></i>
+                    <h1>BORRAR AMIGOS</h1>
+                </div>
+                <div id="borrarCuenta">
+                    <i class="fa-solid fa-arrow-left" onclick="volverAjustes()"></i>
+                    <h1>BORRAR CUENTA</h1>
+                </div>
             </section>
         </main>
 

@@ -5,8 +5,8 @@
 }
 
 /* MOVIL */
-#search, aside, main > #mensajes, main > #contenido, #footerPC, #buscMovil, 
-#msgMovil, #chatMovil, #perfilMovil, #ajustesMovil, .fa-solid.fa-heart, .fa-solid.fa-bookmark {
+nav, aside, #mensajes, #contenido, #footerPC, #iniMovil , #buscar, 
+#mensajes, #chat, #perfil, #ajustes, .fa-solid.fa-heart, .fa-solid.fa-bookmark {
     display: none;
 }
 
@@ -15,6 +15,55 @@ body {
     margin: auto;
     display: flex;
     flex-direction: column;
+}
+
+#logIn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+    height: 90vh;
+    width: 100%;
+    background: gray;
+}
+
+#formLogIn {
+    height: 30vh;
+    width: 78vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+    border: solid black 1px;
+    border-radius: 5%;
+    padding: 1vh;
+    background: white;
+}
+
+#formLogIn > legend {
+    font-size: 2rem;
+    font-weight: bold;
+    border-bottom: solid black 1px;
+}
+
+#formLogIn > input {
+    width: 80%;
+}
+
+#formLogIn > button {
+    background-color: black;
+    border-radius: 15%;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 1vh;
+}
+
+#formLogIn > button:hover {
+    background-color: rgba(77, 77, 77, 0.527);
+    color: black;
 }
 
 header {
@@ -33,13 +82,12 @@ main {
     height: 85vh;
 }
 
-main > #iniMovil {
-    display: flex;
+main > #contenido {
     flex-direction: column;
     gap: 2vh;
 }
 
-main > #iniMovil > #usersMovil {
+#usersMovil {
     height: 7vh;
     width: 100%;
     display: flex;
@@ -48,38 +96,38 @@ main > #iniMovil > #usersMovil {
     background-color: lightslategray;
 }
 
-main > #iniMovil > #usersMovil > .userMovil {
+.userMovil {
     height: 5vh;
     border-radius: 50%;
     margin-left: 2vw;
 }
 
-main > #iniMovil > .publiMovil {
+.publicacion {
     display: flex;
     flex-direction: column;
     gap: 1vh;
 }
 
-main > #iniMovil > .publiMovil > .publiMovilUser {
+.publicacionUser {
     width: 100%;
     display: flex;
     align-items: center;
     gap: 2vw;
 }
 
-main > #iniMovil > .publiMovil > .publiMovilUser > img {
+.publicacionUser > img {
     height: 5vh;
     border-radius: 50%;
 }
 
-main > #iniMovil > .publiMovil > .publiMovilDesc > p {
+.publicacionDesc > p {
     height: 13vh;
     padding: 0.5vh;
     overflow: scroll;
     background: gray;
 }
 
-main > #iniMovil > .publiMovil > .publiMovilContent {
+.publicacionContent {
     height: 52vh;
     width: 100%;
     display: flex;
@@ -88,11 +136,12 @@ main > #iniMovil > .publiMovil > .publiMovilContent {
     background-color: gray;
 }
 
-main > #iniMovil > .publiMovil > .publiMovilContent > img {
+.publicacionContent > img {
     height: 50vh;
     width: 90vw;
 }
-main > #iniMovil > .publiMovil > #comentariosMovil {
+
+#comentariosMovil {
     display: none;
     position: absolute;
     top: 24vh;
@@ -101,7 +150,7 @@ main > #iniMovil > .publiMovil > #comentariosMovil {
     height: 66vh;
 }
 
-main > #iniMovil > .publiMovil > .publiInterMovil {
+.publiInterMovil {
     height: 3.5vh;
     display: flex;
     align-items: center;
@@ -109,18 +158,18 @@ main > #iniMovil > .publiMovil > .publiInterMovil {
     margin-top: -1vh;
 }
 
-main > #iniMovil > .publiMovil > .publiInterMovil  > i {
+.publiInterMovil  > i {
     font-size: 1.5rem;
 }
 
-main > #buscMovil, main > #msgMovil {
+#buscar, #mensajes {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     height: 84vh;
 }
 
-main > #msgMovil > #chatsMovil, main > #buscMovil > #buscUsersMovil {
+#bandejaEntrada, #listaUsers {
     border: solid black 1px;
     height: 75vh;
     width: 100%;
@@ -131,19 +180,19 @@ main > #msgMovil > #chatsMovil, main > #buscMovil > #buscUsersMovil {
     overflow: scroll;
 }
 
-main > #msgMovil > #chatsMovil > p, main > #buscMovil > #buscUsersMovil > p {
+#bandejaEntrada > p, #listaUsers > p {
     border-bottom: solid black 1px;
     height: 4vh;
     vertical-align: middle;
 }
 
-main > #chatMovil {
+#chat {
     height: 84vh;
     flex-direction: column;
     justify-content: space-around;
 }
 
-main > #chatMovil > #topChatMovil {
+#topChat {
     width: 70%;
     display: flex;
     align-items: center;
@@ -151,11 +200,7 @@ main > #chatMovil > #topChatMovil {
     margin-left: 2vw;
 }
 
-main > #chatMovil > #topChatMovil > i {
-    font-size: 1.8rem;
-}
-
-main > #chatMovil > #contenedorMensajesMovil {
+#contenedorMensajes {
     width: 100%;
     height: 77vh;
     display: flex;
@@ -165,64 +210,64 @@ main > #chatMovil > #contenedorMensajesMovil {
     padding: 0vh 1vh 1vh 1vh;
 }
 
-main > #chatMovil > #contenedorMensajesMovil > .mensajeUserMovil, main > #chatMovil > #contenedorMensajesMovil > .mensajeAmigoMovil  {
+.mensajeUser, .mensajeAmigo  {
     border-radius: 10%;
     margin: 1vh 0 0 0;
     padding: 1vh;
 }
 
-main > #chatMovil > #contenedorMensajesMovil > .mensajeUserMovil {
+.mensajeUser {
     align-self: flex-end;
     background-color: aqua;
 }
 
-main > #chatMovil > #contenedorMensajesMovil > .mensajeAmigoMovil {
+.mensajeAmigo {
     align-self: flex-start;
     background-color: aqua;
 }
 
-main > #perfilMovil {
+#perfil {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     gap: 2vh;
 }
 
-main > #perfilMovil > #topPerfilMovil {
+#topPerfil {
     display: flex;
 }
 
-main > #perfilMovil > #topPerfilMovil > img {
+#topPerfil > img {
     width: 25vw;
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 5px, rgba(0, 0, 0, 0.6) -2px -2px 5px, rgba(0, 0, 0, 0.6) -2px 2px 5px, rgba(0, 0, 0, 0.6) 2px -2px 5px;
 }
 
-main > #perfilMovil > #topPerfilMovil > #datosPerfilMovil {
+#datosPerfil {
     width: 70vw;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-main > #perfilMovil > #topPerfilMovil > #datosPerfilMovil > h1 {
+#datosPerfil > h1 {
     width: 100%;
     text-align: center;
 }
 
-main > #perfilMovil > #topPerfilMovil > #datosPerfilMovil > #contAmigosMovil, main > #perfilMovil > #topPerfilMovil > #datosPerfilMovil > #contPubliMovil {
+#contAmigos, #contPublicaciones {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-main > #perfilMovil > #bioMovil {
+#bio {
     height: 17vh;
     padding: 1vh;
     overflow: scroll;
 }
 
-main > #perfilMovil > #publicacionesMovil {
+#publicaciones {
     height: 53.2vh;
     width: 100%;
     display: flex;
@@ -234,33 +279,79 @@ main > #perfilMovil > #publicacionesMovil {
     overflow: scroll;
 }
 
-main > #perfilMovil > #publicacionesMovil > .publiPerfilMovil {
+.publicacionPerfil {
     width: 27vw;
     height: 11vh;
     border-radius: 5%;
     box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 5px, rgba(0, 0, 0, 0.6) -2px -2px 5px, rgba(0, 0, 0, 0.6) -2px 2px 5px, rgba(0, 0, 0, 0.6) 2px -2px 5px;
 }
 
-main > #perfilMovil > #publicacionesMovil > .publiPerfilMovil.relleno {
+.publicacionPerfil.relleno {
     box-shadow: none;
 }
 
-main > #perfilMovil > #publicacionesMovil > .publiPerfilMovil > img {
+.publicacionPerfil > img {
     width: 100%;
     height: 100%;
     border-radius: 5%;
 }
 
-/* FOOTER */
-footer > #footerMovil {
-    height: 6vh;
+#ajustes {
+    height: 84vh;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#topAjustes {
+    width: 55%;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 2vw;
+}
+
+#topPerfil > h1, #buscar > h1, #mensajes > h1, #topChat > i, 
+#topChat > h1, #topAjustes > i, #topAjustes > h1 {
+    font-size: 1.8rem;
+}
+
+#contenedorAjustes {
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: black solid 1px;
+}
+
+#contenedorAjustes > p {
+    width: 100%;
+    text-align: center;
+    padding: 6vh;
+    border-bottom: black solid 1px;
+}
+
+#contenedorAjustes > p:last-child {
+    border: none;
+}
+
+#cambiarNombre, #borrarPublicaciones, #borrarAmigos, #borrarCuenta, #logOutMovil {
+    width: 50vh;
+    height: 50vh;
+    display: none;
+    background-color: aqua;
+}
+
+/* FOOTER */
+#footerMovil {
+    height: 6vh;
+    display: none;
     justify-content: space-around;
     align-items: center;
     border-top: 1px solid rgba(128, 128, 128, 0.521);
 }
 
-footer > #footerMovil > i {
+#footerMovil > i {
     font-size: 1.5rem;
     padding: 1vh;
     border-top: 1px solid rgba(128, 128, 128, 0.521);

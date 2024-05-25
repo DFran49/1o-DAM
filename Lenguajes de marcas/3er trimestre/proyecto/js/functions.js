@@ -144,27 +144,15 @@ function busqueda(c,b) {
             p[i].style.display = "none";
         }
     }
-    
 }
 
-function buscar(event) {
+function buscarPC(event) {
     if (event.keyCode == 13) {
         alert('a');
     } else {
         var input, div;
         input =  document.forms["search"]["myBusqueda"].value;
         /* falta cambiar esto */
-        div = document.getElementById("listaUsers");
-        busqueda(input, div);
-    }
-}
-
-function buscarusers(event) {
-    if (event.keyCode == 13) {
-        alert('a');
-    } else {
-        var input, div;
-        input =  document.forms["busquedaMovil"]["buscarPerfiles"].value;
         div = document.getElementById("listaUsers");
         busqueda(input, div);
     }
@@ -204,7 +192,18 @@ function cambiarNombre() {
 }
 
 function confCambiarNombre() {
-    alert('Usuario cambiado')
+    var x, y;
+    x = document.forms["cambiarUsername"]["passwd"].value;
+    y = document.forms["cambiarUsername"]["newUsername"].value;
+    if (x == "") {
+        alert('Debes introducir tu contraseña para confirmar el cambio');
+    } else {
+        if (y == "") {
+            alert('Debes introducir un nombre de usuario para hacer un cambio');
+        } else {
+            alert('Usuario cambiado');
+        }
+    }
 }
 
 function borrarPubli() {

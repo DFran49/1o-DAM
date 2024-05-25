@@ -1,13 +1,56 @@
 function logIn() {
     let x = document.forms["formLogIn"]["username"].value;
+    let y = document.forms["formLogIn"]["passwd"].value;
     /*if (x == "") {
-        alert("Name must be filled out");
+        alert("El campo 'Nombre de usuario' no puede estar vacío");
         return false;
-    } else {*/
+    } else {
+        if (y == "") {
+            alert("Debe introducir una contraseña");
+        } else {*/
+            document.getElementById('logIn').style.display = 'none';
+            document.getElementById('signIn').style.display = 'none';
+            document.getElementById('contenido').style.display = 'flex';
+            document.getElementById('footerMovil').style.display = 'flex';
+            document.getElementById('comentariosMovil').style.display = 'none';
+        /*}
+    }*/
+}
+
+function signIn() {
+    let x = document.forms["formSignIn"]["passwd"].value;    
+    let y = document.forms["formSignIn"]["confPasswd"].value;
+    let z = document.forms["formSignIn"]["username"].value;
+    if (z == "") {
+        alert("El campo 'Nombre de usuario' no puede estar vacío");
+    } else {
+        if (x == "" || y == "") {
+            alert("Debe introducir una contraseña");
+        } else {
+            if (x != y) {
+                alert('Las contraseñas deben de ser iguales');
+            } else {
+                document.getElementById('signIn').style.display = 'none';
+                document.getElementById('contenido').style.display = 'flex';
+                document.getElementById('footerMovil').style.display = 'flex';
+                document.getElementById('comentariosMovil').style.display = 'none';
+            }
+        }
+    }    
+}
+
+function cambiarLog() {
+    if (document.getElementById('logIn').style.display = 'flex') {
         document.getElementById('logIn').style.display = 'none';
-        document.getElementById('contenido').style.display = 'flex';
-        document.getElementById('footerMovil').style.display = 'flex';
-    /*}*/
+        document.getElementById('signIn').style.display = 'flex';
+    }
+}
+
+function cambiarSign() {
+    if (document.getElementById('signIn').style.display = 'flex') {
+        document.getElementById('logIn').style.display = 'flex';
+        document.getElementById('signIn').style.display = 'none';
+    }
 }
 
 function inicio() {
@@ -63,10 +106,9 @@ function ajustes() {
 function comentarios() {
     if (document.getElementById('comentariosMovil').style.display == 'none') {
         document.getElementById('comentariosMovil').style.display = 'flex';
-        alert('b');
+    } else {
+        document.getElementById('comentariosMovil').style.display = 'none';
     }
-    
-    alert(document.getElementById('comentariosMovil').textContent);
 }
 
 function cambiarMeGusta() {
@@ -89,11 +131,9 @@ function cambiarGuardado() {
     }   
 }
 
-function busqueda(a,b) {
-    console.log(a);
-    console.log(b);
+function busqueda(c,b) {
     var input, div, p, a, i;
-    input = a;
+    input = c;
     div = b;
     p = div.getElementsByTagName("p");
     for (i = 0; i < p.length; i++) {     
@@ -107,28 +147,49 @@ function busqueda(a,b) {
     
 }
 
-function buscarPerfiles(event) {
+function buscar(event) {
     if (event.keyCode == 13) {
-        alert('enter')
+        alert('a');
     } else {
         var input, div;
-        input =  document.forms["busquedaMovil"]["buscarPerfiles"].value;
+        input =  document.forms["search"]["myBusqueda"].value;
+        /* falta cambiar esto */
         div = document.getElementById("listaUsers");
         busqueda(input, div);
     }
-    alert('a');
 }
 
-function hola(event) {
+function buscarusers(event) {
     if (event.keyCode == 13) {
         alert('a');
     } else {
         var input, div;
         input =  document.forms["busquedaMovil"]["buscarPerfiles"].value;
         div = document.getElementById("listaUsers");
-        busqueda()
+        busqueda(input, div);
     }
-    alert(event.keyCode);
+}
+
+function buscarusers(event) {
+    if (event.keyCode == 13) {
+        alert('a');
+    } else {
+        var input, div;
+        input =  document.forms["busquedaMovil"]["buscarPerfiles"].value;
+        div = document.getElementById("listaUsers");
+        busqueda(input, div);
+    }
+}
+
+function buscarchats(event) {
+    if (event.keyCode == 13) {
+        alert('a');
+    } else {
+        var input, div;
+        input =  document.forms["abrirChatMovil"]["buscarChats"].value;
+        div = document.getElementById("bandejaEntrada");
+        busqueda(input, div);
+    }
 }
 
 function volverMensajes() {
@@ -140,6 +201,10 @@ function cambiarNombre() {
     document.getElementById('contenedorAjustes').style.display = 'none';
     document.getElementById('topAjustes').style.display = 'none';
     document.getElementById('cambiarNombre').style.display = 'flex';
+}
+
+function confCambiarNombre() {
+    alert('Usuario cambiado')
 }
 
 function borrarPubli() {

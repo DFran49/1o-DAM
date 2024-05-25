@@ -14,10 +14,11 @@
         </header>
 
         <nav>
-            <div id="search">
-                <input type="text" id="mySearch" onkeyup="findUsers()" placeholder="Search.." title="Type in a category">
+            <form id="search">
+                <!-- Falta completar la función -->
+                <input type="text" id="myBusqueda" onkeyup="findUsers()" placeholder="Search.." title="Type in a category">
                 <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
+            </form>
         </nav>
         
         <aside>
@@ -37,11 +38,26 @@
             <article id="logIn">
                 <form action="" method="post" id="formLogIn">
                     <legend>INICIAR SESIÓN</legend>
-                    <label for="username">Nombre de usuario</label>
+                    <label for="username">Usuario</label>
                     <input type="text" id="username" required>
                     <label for="passwd">Contraseña</label>
                     <input type="password" id="passwd" required>
+                    <button type="button" onclick="cambiarLog()">Registrarse</button>
                     <button type="button" onclick="logIn()">Iniciar</button>
+                </form>
+            </article>
+
+            <article id="signIn">
+                <form action="" method="post" id="formSignIn">
+                    <legend>REGISTRARSE</legend>
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" required>
+                    <label for="passwd">Contraseña</label>
+                    <input type="password" id="passwd" required>
+                    <label for="confPasswd">Confirmar Contraseña</label>
+                    <input type="password" id="confPasswd" required>
+                    <button type="button" onclick="cambiarSign()">Iniciar Sesión</button>
+                    <button type="button" onclick="signIn()">Iniciar</button>
                 </form>
             </article>
 
@@ -90,7 +106,7 @@
             <section id="buscar">
                 <h1>BUSCAR</h1>
                 <form id="busquedaMovil" action="#">
-                    <input type="text" id="buscarPerfiles" onkeyup="hola(event)" placeholder="Search.." title="Type in a category">
+                    <input type="text" id="buscarPerfiles" onkeyup="buscarusers(event)" placeholder="Search.." title="Type in a category">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </form>
                 <div id="listaUsers">
@@ -101,10 +117,10 @@
 
             <section id="mensajes">
                 <h1>MENSAJES</h1>
-                <div id="busquedaMovil">
-                    <input type="text" id="buscarChats" onkeyup="buscarChats(event)" placeholder="Search.." title="Type in a category">
+                <form id="abrirChatMovil">
+                    <input type="text" id="buscarChats" onkeyup="buscarchats(event)" placeholder="Search.." title="Type in a category">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
+                </form>
                 <div id="bandejaEntrada">
                     <p onclick="chat()">chat 1</p>
                     <p>chat 2</p>
@@ -146,10 +162,12 @@
                         <div id="contAmigos">
                             <h4>Amigos</h4>
                             <p>0</p>
+                            <button>Amistad</button>
                         </div>
                         <div id="contPublicaciones">
                             <h4>Publicaciones</h4>
                             <p>0</p>
+                            <button>Mensaje</button>
                         </div>
                     </div>
                 </div>
@@ -186,9 +204,17 @@
                     <p onclick="logOut()">Cerrar sesión</p>
                 </div>
                 <section id="cambiarNombre">
-                    <i class="fa-solid fa-arrow-left" onclick="volverAjustes()"></i>
-                    <h1>CAMBIAR NOMBRE</h1>
-                    A
+                    <div id="topAjustes">
+                        <i class="fa-solid fa-arrow-left" onclick="volverAjustes()"></i>
+                        <h1>CAMBIAR NOMBRE</h1>
+                    </div>
+                    <form action="">
+                        <label for="passwd">Contraseña</label>
+                        <input type="password" id="passwd">
+                        <label for="username">Usuario</label>
+                        <input type="text" id="username">
+                        <button type="button" onclick="confCambiarNombre()">Confirmar</button>
+                    </form>
                 </section>
                 <div id="borrarPublicaciones">
                     <i class="fa-solid fa-arrow-left" onclick="volverAjustes()"></i>

@@ -17,7 +17,7 @@ body {
     flex-direction: column;
 }
 
-#logIn {
+#logIn, #signIn {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,6 +30,14 @@ body {
 
 #formLogIn {
     height: 30vh;
+}
+
+#formSignIn {
+    height: 39vh;
+    display: none;
+}
+
+#formLogIn, #formSignIn {
     width: 78vw;
     display: flex;
     flex-direction: column;
@@ -42,17 +50,17 @@ body {
     background: white;
 }
 
-#formLogIn > legend {
+#formLogIn > legend, #formSignIn > legend {
     font-size: 2rem;
     font-weight: bold;
     border-bottom: solid black 1px;
 }
 
-#formLogIn > input {
+#formLogIn > input, #formSignIn > input {
     width: 80%;
 }
 
-#formLogIn > button {
+#formLogIn > button, #formSignIn > button {
     background-color: black;
     border-radius: 15%;
     color: white;
@@ -61,7 +69,7 @@ body {
     padding: 1vh;
 }
 
-#formLogIn > button:hover {
+#formLogIn > button:hover, #formSignIn > button:hover {
     background-color: rgba(77, 77, 77, 0.527);
     color: black;
 }
@@ -235,9 +243,12 @@ main > #contenido {
 
 #topPerfil {
     display: flex;
+    align-items: center;
+    padding-top: 1vh;
 }
 
 #topPerfil > img {
+    height: 11vh;
     width: 25vw;
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 5px, rgba(0, 0, 0, 0.6) -2px -2px 5px, rgba(0, 0, 0, 0.6) -2px 2px 5px, rgba(0, 0, 0, 0.6) 2px -2px 5px;
@@ -261,6 +272,20 @@ main > #contenido {
     align-items: center;
 }
 
+#contAmigos > button, #contPublicaciones > button {
+    margin-top: 0.5vh;
+    border-radius: 15%;
+    background: black;
+    color: white;
+    border: none;
+    padding: 0.5vh 1vh 0.5vh 1vh;
+}
+
+#contAmigos > button:hover, #contPublicaciones > button:hover {
+    color: white;
+    background: gray;
+}
+
 #bio {
     height: 17vh;
     padding: 1vh;
@@ -268,7 +293,7 @@ main > #contenido {
 }
 
 #publicaciones {
-    height: 53.2vh;
+    height: 49.7vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -303,7 +328,7 @@ main > #contenido {
 }
 
 #topAjustes {
-    width: 55%;
+    width: 70%;
     display: flex;
     align-items: center;
     justify-content: space-between;

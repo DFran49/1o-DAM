@@ -18,32 +18,94 @@ pasará otro parámetro con las columnas que se deben mostrar de la forma 'col1,
 ejemplos de llamada al procedimiento. ¿Se podría hacer sin utilizar sentencias preparadas? */
 USE conferencias2;
 DELIMITER $$
-CREATE PROCEDURE devolver_conferencias(p_conferencias VARCHAR(100), p_columnas VARCHAR(100))
+CREATE PROCEDURE devolver_conferencias(p_conferencias INT, p_columnas VARCHAR(255))
     COMMENT 'Devuelve las conferencias pasadas como parámetro y las columnas de estas indicadas.'
 BEGIN
     DECLARE v_consulta VARCHAR(200);
-    SET v_consulta = CONCAT('SELECT * FROM conferencia WHERE ', p_nom_col, p_oper, '?');
+    SET v_consulta = CONCAT('SELECT ', p_columnas, ' FROM conferencia LIMIT ' p_conferencias);
     PREPARE prep_consulta FROM v_consulta;
-    EXECUTE prep_consulta USING p_val_par;
+    EXECUTE prep_consulta;
     DEALLOCATE PREPARE prep_consulta;
 END$$
 DELIMITER ;
 
-CALL conferencias_filtro('turno', '=', 'M');
+CALL devolver_conferencias(5, 'tema, precio, turno');
+CALL devolver_conferencias(2, 'idConferencia, precio, fecha');
 
 /* 10. Crear un procedimiento que devuelva las conferencias (tema, precio y turno) que tienen lugar en la sala
 indicada como parámetro. En caso de que no haya conferencias deberá devolver “SIN CONFERENCIAS” y en el
 caso de que no exista la sala, “LA SALA NO EXISTE”. */
+USE conferencias2;
+DELIMITER $$
+CREATE PROCEDURE devolver_conferencias_en_sala(p_sala VARCHAR(255))
+    COMMENT 'Devuelve las conferencias de la sala indicada como parámetro.'
+BEGIN
+    DECLARE existe INT;
+    DECLARE cont_salas INT;
+    SELECT COUNT(*) INTO existe FROM sala WHERE nombreSala = p_sala;
+    IF (existe = 0) THEN
+        SELECT 'LA SALA NO EXISTE' AS 'ALERTA';
+    ELSE
+        SELECT COUNT(*) INTO cont_salas FROM conferencia WHERE nombreSala = p_sala;
+        IF (cont_salas = 0) THEN
+            SELECT 'SIN CONFERENCIAS' AS 'ALERTA';
+        ELSE
+            SELECT tema, precio, turno FROM conferencia WHERE nombreSala = p_sala;
+        END IF;
+    END IF;
+END$$
+DELIMITER ;
 
+CALL devolver_conferencias_en_sala('Afrodita');
+CALL devolver_conferencias_en_sala('Hermes');
 
 /* 11. Crear un procedimiento que devuelva el número de conferencias que se celebraron en la fecha indicada como
 parámetro. En caso de que no hubiera conferencias ese día debe devolver -1. */
+USE conferencias2;
+DELIMITER $$
+CREATE PROCEDURE devolver_num_conferencias_fecha(p_fecha DATE, OUT p_num_conferencias INT)
+    COMMENT 'Devuelve el número de conferencias de la fecha indicada como parámetro.'
+BEGIN
+    SELECT COUNT(*) INTO num_conferencias FROM conferencia WHERE fecha = p_fecha;
+    IF (num_conferencias = 0) THEN
+        SET num_conferencias = -1;
+    END IF;
+END$$
+DELIMITER ;
 
+CALL devolver_num_conferencias_fecha('2013-10-03', @p_num_conferencias);
+SELECT @p_num_conferencias;
+
+CALL devolver_num_conferencias_fecha('2015-10-03', @p_num_conferencias);
+SELECT @p_num_conferencias;
 
 /* 12. Crear un procedimiento al que se le pase una capacidad como parámetro y devuelva, empleando el mismo
 parámetro, cuantas salas tienen una capacidad superior a la pasada. Al mismo tiempo debe mostrar los
 nombres de las salas. En caso de que no se encuentren salas, debe devolver -1 y mostrar el texto “SIN SALAS”. */
+USE conferencias2;
+DELIMITER $$
+CREATE PROCEDURE devolver_num_salas(INOUT p_salas INT)
+    COMMENT 'Devuelve el número de salas con la capacidad indicada como parámetro.'
+BEGIN
+    DECLARE temp INT;
+    SELECT COUNT(*) INTO temp FROM sala WHERE capacidad > p_salas;
+    IF (temp = 0) THEN
+        SET p_salas = -1;
+        SELECT 'SIN SALAS' AS resultado;
+    ELSE
+        SELECT nombreSala FROM sala WHERE capacidad > p_salas;
+        SET p_salas = temp;
+    END IF;
+END$$
+DELIMITER ;
 
+SET @p_salas = 151;
+CALL devolver_num_salas(@p_salas);
+SELECT @p_salas;
+
+SET @p_salas = 300;
+CALL devolver_num_salas(@p_salas);
+SELECT @p_salas;
 
 /* 13. Crear un procedimiento al que se le pase como parámetros un idPonente y dos fechas, y devuelva en forma de
 parámetro de salida en cuantas conferencias participó ese ponente entre las dos fechas indicadas.
@@ -53,7 +115,39 @@ o En caso de que las fechas no tenga un formato correcto (STR_TO_DATE(str,format
 parámetro de salida debe devolver -1 y mostrarse la cadena “FECHAS CON FORMATO INCORRECTO”.
 o Si existe el ponente y hay conferencias, el procedimiento también debe mostrar el nombre de las
 conferencias (sin repetirse) ordenadas alfabéticamente. */
+USE conferencias2;
+DELIMITER $$
+CREATE PROCEDURE devolver_num_conf_entre_fechas(p_id CHAR(6), p_fecha1 VARCHAR(10), p_fecha2 VARCHAR(10), OUT p_num_conferencias INT)
+    COMMENT 'Devuelve el número de conferencias en las que ha participado un ponente entre dos fechas.'
+BEGIN
+    DECLARE validarFecha1 DATE;
+    DECLARE validarFecha2 DATE;
+    SELECT COUNT(*) INTO p_num_conferencias FROM ponente WHERE idPonente = p_id;
+    IF (p_num_conferencias = 0) THEN
+        SET p_num_conferencias = -1;
+        SELECT 'NO EXISTE EL PONENTE' AS resultado;
+    ELSE
+        SET validarFecha1 = STR_TO_DATE(p_fecha1,'%Y-%m-%d');
+        SET validarFecha2 = STR_TO_DATE(p_fecha2,'%Y-%m-%d');
+        IF (validarFecha1 IS NULL OR validarFecha2 IS NULL) THEN
+            SET p_num_conferencias = -1;
+        SELECT 'FECHAS CON FORMATO INCORRECTO' AS resultado;
+        ELSE
+            SELECT DISTINCT tema FROM conferencia WHERE idConferencia IN (SELECT idConferencia FROM participa WHERE idPonente = p_id) ORDER BY tema;
+            SELECT COUNT(*) INTO p_num_conferencias FROM conferencia WHERE idConferencia IN (SELECT idConferencia FROM participa WHERE idPonente = p_id);
+        END IF;
+    END IF;
+END$$
+DELIMITER ;
 
+CALL devolver_num_conf_entre_fechas('ESP004', '2013-08-19', '2014-05-10', @p_num_conferencias);
+SELECT @p_num_conferencias;
+
+CALL devolver_num_conf_entre_fechas('PMR004', '2013-08-19', '2014-05-10', @p_num_conferencias);
+SELECT @p_num_conferencias;
+
+CALL devolver_num_conf_entre_fechas('ESP004', '2013-0853-19', '2014-05-10', @p_num_conferencias);
+SELECT @p_num_conferencias;
 
 /* 14. Crear un procedimiento que devuelva en forma de parámetro de salida la suma de las capacidades de las salas
 enviadas como parámetro. El formato de la lista de salas es una única cadena: 'sala1, sala2, ...'. Emplear las
